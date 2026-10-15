@@ -1,0 +1,21 @@
+{
+  "name": "Oh My Donut Reims",
+  "short_name": "Oh My Donut",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF7F3",
+  "theme_color": "#5B1426",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

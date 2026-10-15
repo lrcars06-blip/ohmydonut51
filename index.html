@@ -1,0 +1,1535 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oh My Donut Reims | Donuts en click & collect</title>
+<meta name="description" content="Oh My Donut, 19 rue des Capucins à Reims. Donuts, bubble tea, café gourmand et smoothies. Commandez en ligne et récupérez en boutique, 7j/7 de 10h à 22h.">
+<meta name="theme-color" content="#5B1426">
+<link rel="icon" href="favicon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preload" as="image" href="logo-ohmydonut.webp">
+<link rel="canonical" href="https://ohmydonut-reims.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oh My Donut Reims | Donuts en click & collect">
+<meta property="og:description" content="Donuts, bubble tea, café gourmand et smoothies au 19 rue des Capucins à Reims. Commandez en ligne, récupérez en boutique.">
+<meta property="og:url" content="https://ohmydonut-reims.vercel.app/">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Bakery","name":"Oh My Donut","image":"https://ohmydonut-reims.vercel.app/logo-ohmydonut.png","email":"ohmydonutreims@gmail.com","url":"https://ohmydonut-reims.vercel.app/","telephone":"+33647698209","priceRange":"1-10 €","servesCuisine":"Donuts","address":{"@type":"PostalAddress","streetAddress":"19 rue des Capucins","postalCode":"51100","addressLocality":"Reims","addressCountry":"FR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"10:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"13:00","closes":"20:00"}],"sameAs":["https://www.instagram.com/ohmydonut51/"]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#EC4C8A;
+  --pink-deep:#C92E6C;
+  --blush:#FAD6E3;
+  --blush-soft:#FDEEF3;
+  --choco:#4A2418;
+  --choco-soft:#7A4A36;
+  --bordeaux:#5B1426;
+  --bordeaux-deep:#3E0C19;
+  --cream:#FBF7F3;
+  --gold:#D9A441;
+  --ink:#2B1510;
+  --line:#EAD9D2;
+  --radius-lg:28px;
+  --radius:18px;
+  --radius-sm:12px;
+  --shadow:0 18px 40px -18px rgba(91,20,38,.35);
+  --script:'Kaushan Script',cursive;
+  --sans:'Baloo 2',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);font-size:17px;line-height:1.55;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Marble texture */
+.marble{background-color:#FBF8F6;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='m'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.006 .02' numOctaves='4' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .5 0 0 0 -2.2 1.25'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23m)' opacity='.35'/%3E%3C/svg%3E")}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;padding:.8em 1.5em;border-radius:999px;font-weight:700;font-size:1rem;line-height:1.1;transition:transform .15s ease,background .2s ease,box-shadow .2s ease;text-decoration:none;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-pink{background:var(--pink);color:#fff;box-shadow:0 6px 0 var(--pink-deep)}
+.btn-pink:hover{background:#F25E97}
+.btn-pink:active{box-shadow:0 2px 0 var(--pink-deep);transform:translateY(4px)}
+.btn-ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.btn-choco{background:var(--choco);color:#fff}
+.btn-choco:hover{background:#5d3021}
+.btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:none;transform:none}
+
+/* Header */
+.top{position:sticky;top:0;z-index:40;background:rgba(251,247,243,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;gap:20px;height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand-logo{height:48px;width:auto;display:block}
+.brand-mark{width:46px;height:46px}
+.brand-name{font-family:var(--script);font-size:1.6rem;color:var(--bordeaux);line-height:1}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{padding:.45em .9em;border-radius:999px;text-decoration:none;font-weight:600;color:var(--choco)}
+.nav a:hover{background:var(--blush-soft);color:var(--pink-deep)}
+.status{display:flex;align-items:center;gap:7px;font-size:.88rem;font-weight:600;color:var(--choco-soft);white-space:nowrap}
+.status i{width:9px;height:9px;border-radius:50%;background:#9AA0A6}
+.status.open i{background:#2FB36B;box-shadow:0 0 0 4px rgba(47,179,107,.18)}
+.cart-btn{position:relative;display:flex;align-items:center;gap:8px;background:var(--bordeaux);color:#fff;padding:.6em 1.1em;border-radius:999px;font-weight:700}
+.cart-btn:hover{background:var(--bordeaux-deep)}
+.cart-count{min-width:24px;height:24px;border-radius:12px;background:var(--pink);display:grid;place-items:center;font-size:.85rem;padding:0 6px}
+.cart-count.bump{animation:bump .35s ease}
+@keyframes bump{40%{transform:scale(1.35)}}
+
+/* Hero */
+.hero{position:relative;background:var(--bordeaux);color:#fff;overflow:hidden;min-height:min(86vh,780px);display:flex;align-items:center}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(62,12,25,.94) 0%,rgba(91,20,38,.82) 42%,rgba(91,20,38,.35) 75%,rgba(91,20,38,.2) 100%)}
+.hero-in{position:relative;z-index:2;display:block;padding:56px 0 120px}
+.hero-content{max-width:620px}
+.hero h1.hero-title{margin:0 0 22px -6px;transform:none;line-height:0}
+.hero-logo{width:min(580px,100%);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.4))}
+.hero-sticker{position:absolute;z-index:2;right:max(16px,6vw);bottom:22%;background:var(--pink);color:#fff;border-radius:50%;width:132px;height:132px;display:grid;place-items:center;text-align:center;font-family:var(--script);font-size:1.3rem;line-height:1.05;transform:rotate(12deg);box-shadow:0 6px 0 var(--pink-deep)}
+.hero h1{font-family:var(--script);font-weight:400;font-size:clamp(3.4rem,8.5vw,7rem);line-height:.95;color:var(--blush);letter-spacing:-.01em;transform:rotate(-3deg);transform-origin:left;margin-bottom:28px;text-shadow:0 5px 0 var(--pink-deep)}
+.hero .lead{font-size:clamp(1.1rem,2vw,1.3rem);max-width:30em;color:#F6E3EA;margin-bottom:32px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:.45em 1em;border-radius:999px;background:rgba(255,255,255,.1);font-weight:600;font-size:.95rem;text-decoration:none}
+.chip:hover{background:rgba(255,255,255,.16)}
+.stars{color:var(--gold);letter-spacing:1px}
+.hero-art{position:relative;aspect-ratio:1;max-width:520px;width:100%;justify-self:center}
+.hero-donut{width:100%;height:100%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35));animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.crown{position:absolute;top:-4%;left:50%;width:30%;transform:translateX(-50%) rotate(-8deg);filter:drop-shadow(0 8px 10px rgba(0,0,0,.3))}
+.sticker{position:absolute;right:2%;bottom:10%;background:var(--pink);color:#fff;border-radius:50%;width:132px;height:132px;display:grid;place-items:center;text-align:center;font-family:var(--script);font-size:1.3rem;line-height:1.05;transform:rotate(12deg);box-shadow:0 6px 0 var(--pink-deep)}
+.drip{position:absolute;z-index:3;left:0;right:0;bottom:-1px;height:48px;color:var(--cream)}
+
+/* Section headings */
+section{scroll-margin-top:80px}
+.sec{padding:96px 0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 32px;margin-bottom:40px}
+.sec-head h2{font-family:var(--script);font-weight:400;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1;color:var(--bordeaux)}
+.sec-head p{max-width:34em;color:var(--choco-soft)}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:-40px;position:relative;z-index:4}
+.step{background:#fff;border-radius:var(--radius);padding:24px 24px 22px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:flex-start}
+.step b{flex:none;width:44px;height:44px;border-radius:50%;background:var(--blush);color:var(--pink-deep);display:grid;place-items:center;font-size:1.3rem;font-weight:800}
+.step h3{font-size:1.15rem;line-height:1.2;color:var(--bordeaux);margin-bottom:2px}
+.step p{font-size:.95rem;color:var(--choco-soft);line-height:1.4}
+
+/* Menu */
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{padding:.55em 1.2em;border-radius:999px;font-weight:700;background:#fff;color:var(--choco);box-shadow:inset 0 0 0 2px var(--line)}
+.tab:hover{box-shadow:inset 0 0 0 2px var(--pink)}
+.tab[aria-selected="true"]{background:var(--choco);color:#fff;box-shadow:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px}
+.card{position:relative;background:#fff;border-radius:var(--radius-lg);padding:18px 18px 20px;display:flex;flex-direction:column;border:1px solid var(--line)}
+.card-art{aspect-ratio:1;border-radius:20px;display:grid;place-items:center;padding:14%;margin-bottom:14px;background:var(--blush-soft)}
+.card-art svg{width:100%;height:100%;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}
+.card:hover .card-art svg{transform:rotate(-12deg) scale(1.05)}
+.card h3{font-size:1.2rem;line-height:1.2;color:var(--bordeaux)}
+.card p{font-size:.94rem;color:var(--choco-soft);line-height:1.4;margin:4px 0 14px;flex:1}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.price{font-weight:800;font-size:1.25rem;color:var(--choco)}
+.add{width:46px;height:46px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;box-shadow:0 4px 0 var(--pink-deep);transition:transform .12s}
+.add:hover{background:#F25E97}
+.add:active{transform:translateY(3px);box-shadow:0 1px 0 var(--pink-deep)}
+.add svg{width:20px;height:20px}
+.badge{position:absolute;top:26px;left:26px;z-index:1;font-family:var(--script);font-size:1.05rem;padding:.15em .75em;border-radius:999px;transform:rotate(-6deg)}
+.badge.new{background:var(--pink);color:#fff}
+.badge.sig{background:var(--gold);color:var(--choco)}
+
+/* Box builder */
+.box-sec{background:var(--pink);color:#fff;position:relative}
+.box-sec .sec-head h2{color:#fff}
+.box-sec .sec-head p{color:#FFE3EE}
+.builder{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.sizes{display:flex;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.size{flex:1;min-width:110px;background:rgba(255,255,255,.14);border-radius:var(--radius);padding:12px 14px;text-align:left;color:#fff;box-shadow:inset 0 0 0 2px transparent}
+.size strong{display:block;font-size:1.25rem;line-height:1.1}
+.size span{font-size:.9rem;opacity:.9}
+.size[aria-pressed="true"]{background:#fff;color:var(--bordeaux)}
+.box{background:#fff;border-radius:var(--radius-lg);padding:22px;box-shadow:0 22px 50px -20px rgba(62,12,25,.55);color:var(--ink)}
+.box-lid{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}
+.box-lid .t{font-family:var(--script);font-size:1.6rem;color:var(--bordeaux);line-height:1}
+.box-lid .c{font-weight:700;color:var(--choco-soft);font-size:.95rem}
+.slots{display:grid;gap:10px;background:var(--blush);padding:12px;border-radius:var(--radius)}
+.slot{aspect-ratio:1;border-radius:14px;background:#fff;display:grid;place-items:center;position:relative;border:2px dashed #EFB6CB;padding:10%}
+.slot.filled{border-style:solid;border-color:transparent;cursor:pointer}
+.slot.filled:hover::after{content:"×";position:absolute;top:4px;right:6px;width:22px;height:22px;border-radius:50%;background:var(--choco);color:#fff;display:grid;place-items:center;font-weight:700;font-size:1rem;line-height:1}
+.slot svg{width:100%;height:100%}
+.slot.pop svg{animation:pop .35s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{from{transform:scale(.3) rotate(-40deg)}}
+.box-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+.box-total{font-weight:800;font-size:1.4rem;color:var(--choco)}
+.link-btn{font-weight:700;color:var(--pink-deep);text-decoration:underline;text-underline-offset:3px}
+.palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px}
+.pal{background:rgba(255,255,255,.14);border-radius:var(--radius);padding:10px 8px 8px;color:#fff;text-align:center;font-size:.85rem;font-weight:600;line-height:1.15}
+.pal:hover{background:rgba(255,255,255,.24)}
+.pal svg{width:64px;height:64px;margin:0 auto 6px}
+.palette-title{font-weight:700;margin-bottom:12px;font-size:1.05rem}
+
+/* Deals */
+.deals{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.deal{border-radius:var(--radius-lg);padding:26px 24px;position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column}
+.deal .big{font-family:var(--script);font-size:3.2rem;line-height:1;margin-bottom:10px}
+.deal h3{font-size:1.2rem;line-height:1.2;margin-bottom:6px}
+.deal p{font-size:.95rem;line-height:1.4;opacity:.9;flex:1}
+.deal .btn{margin-top:16px;align-self:flex-start;padding:.6em 1.1em;font-size:.95rem}
+.d1{background:var(--blush);color:var(--bordeaux)}
+.d2{background:var(--choco);color:#fff}
+.d3{background:#fff;color:var(--choco);border:1px solid var(--line)}
+.d4{background:#1F5A4A;color:#fff}
+
+/* Birthday */
+.bday{background:var(--bordeaux);color:#fff;border-radius:var(--radius-lg);padding:56px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;position:relative;overflow:hidden}
+.bday h2{font-family:var(--script);font-weight:400;font-size:clamp(2.4rem,5vw,3.8rem);line-height:1;color:var(--blush);margin-bottom:14px}
+.bday p{color:#F3DCE4;max-width:32em;margin-bottom:24px}
+.bday-art{display:flex;justify-content:center;gap:0;position:relative}
+.bday-art svg{width:42%;margin:0 -6%}
+.bday-art svg:nth-child(2){transform:translateY(-22%) scale(1.15);z-index:1}
+
+/* Infos */
+.infos{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:32px}
+.info-card h3{font-family:var(--script);font-weight:400;font-size:2rem;color:var(--bordeaux);margin-bottom:16px;line-height:1}
+.info-list{list-style:none;display:grid;gap:18px}
+.info-list li{display:flex;gap:14px}
+.info-list svg{flex:none;width:24px;height:24px;color:var(--pink);margin-top:2px}
+.info-list strong{display:block;color:var(--choco)}
+.info-list span,.info-list a{color:var(--choco-soft)}
+.nav-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.nav-btn{display:inline-flex;align-items:center;gap:7px;padding:.5em .95em;border-radius:999px;font-weight:700;font-size:.92rem;text-decoration:none;color:#fff;transition:transform .12s,filter .2s}
+.nav-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.nav-btn svg{width:18px;height:18px}
+.nav-btn.waze{background:#1FB6E6}
+.nav-btn.gmaps{background:#2E7D32}
+.nav-btn.plans{background:#2B2B2B}
+.modes{margin-bottom:18px}
+.modes button{font-size:.95rem}
+.chips{display:flex;gap:8px;margin-bottom:8px}
+.chips button{padding:.45em .9em;border-radius:999px;border:2px solid var(--line);background:#fff;font-weight:700;font-size:.9rem}
+.chips button[aria-pressed="true"]{border-color:var(--pink);background:var(--pink);color:#fff}
+.req{background:var(--blush-soft);border:1px solid #F3C9D8;border-radius:var(--radius-sm);padding:12px 14px 12px 32px;margin:0 0 16px;font-size:.93rem;color:var(--choco)}
+.req li{margin:2px 0}
+.req strong{color:var(--bordeaux)}
+.pay label.off{opacity:.55;cursor:not-allowed}
+.pay .tag{display:inline-block;margin-left:6px;font-size:.78rem;font-weight:700;color:var(--pink-deep);background:var(--blush);padding:.1em .6em;border-radius:999px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input[type=date]{min-height:48px}
+.map{border-radius:var(--radius-lg);overflow:hidden;min-height:380px;border:1px solid var(--line);background:var(--blush-soft)}
+.map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+
+/* Footer */
+.foot{background:var(--bordeaux-deep);color:#E9CBD6;padding:56px 0 32px;margin-top:96px}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px}
+.foot .brand-name{color:var(--blush);font-size:2.2rem}
+.foot-logo{width:240px;height:auto;display:block}
+.foot p{max-width:24em;margin-top:8px}
+.foot nav{display:grid;gap:6px}
+.foot a{text-decoration:none}
+.foot a:hover{color:#fff;text-decoration:underline}
+.legal{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;font-size:.88rem;opacity:.75}
+
+/* Drawer */
+.scrim{position:fixed;inset:0;background:rgba(43,21,16,.5);z-index:60;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.scrim.on{opacity:1;visibility:visible}
+.drawer{visibility:hidden;position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--cream);z-index:70;transform:translateX(102%);transition:transform .35s cubic-bezier(.2,.9,.3,1);display:flex;flex-direction:column;box-shadow:-20px 0 50px rgba(0,0,0,.2)}
+.drawer.on{transform:none;visibility:visible}
+.dr-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dr-head h2{font-family:var(--script);font-weight:400;font-size:2rem;color:var(--bordeaux);line-height:1}
+.x{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid var(--line)}
+.x:hover{background:var(--blush-soft)}
+.dr-body{flex:1;overflow-y:auto;padding:18px 22px}
+.dr-foot{border-top:1px solid var(--line);padding:18px 22px 22px;background:#fff}
+.line{display:grid;grid-template-columns:60px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.line-art{width:60px;height:60px;border-radius:14px;background:var(--blush-soft);padding:8px}
+.line-art svg{width:100%;height:100%}
+.line h4{font-size:1rem;line-height:1.2;color:var(--bordeaux)}
+.line small{display:block;color:var(--choco-soft);font-size:.85rem;line-height:1.3}
+.qty{display:flex;align-items:center;gap:4px;margin-top:6px}
+.qty button{width:28px;height:28px;border-radius:50%;background:#fff;border:1px solid var(--line);font-weight:800;line-height:1}
+.qty button:hover{border-color:var(--pink)}
+.qty span{min-width:22px;text-align:center;font-weight:700}
+.line-price{font-weight:800;color:var(--choco)}
+.empty{text-align:center;padding:48px 10px;color:var(--choco-soft)}
+.empty svg{width:120px;margin:0 auto 14px;opacity:.9}
+.empty strong{display:block;font-size:1.2rem;color:var(--bordeaux);margin-bottom:4px}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.tot span{color:var(--choco-soft);font-weight:600}
+.tot strong{font-size:1.6rem;color:var(--choco)}
+.full{width:100%}
+
+/* Form */
+.field{margin-bottom:16px}
+.field label,.field .lbl{display:block;font-weight:700;color:var(--choco);margin-bottom:6px;font-size:.95rem}
+.field input,.field select,.field textarea{width:100%;padding:.75em 1em;border-radius:var(--radius-sm);border:2px solid var(--line);background:#fff;font-size:1rem}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--pink)}
+.field textarea{resize:vertical;min-height:72px}
+.field .err{color:#C0263B;font-size:.85rem;margin-top:4px;display:none}
+.field.bad input{border-color:#C0263B}
+.field.bad .err{display:block}
+.seg{display:flex;gap:8px}
+.seg button{flex:1;padding:.65em;border-radius:var(--radius-sm);border:2px solid var(--line);background:#fff;font-weight:700}
+.seg button[aria-pressed="true"]{border-color:var(--choco);background:var(--choco);color:#fff}
+.pay{display:grid;gap:8px}
+.pay label{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:var(--radius-sm);border:2px solid var(--line);background:#fff;font-weight:600;cursor:pointer}
+.pay label:has(input:checked){border-color:var(--pink)}
+.pay input{accent-color:var(--pink);width:18px;height:18px}
+.pay small{display:block;font-weight:500;color:var(--choco-soft);font-size:.85rem}
+.back{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--choco-soft);margin-bottom:14px}
+.recap{text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin-bottom:18px;font-size:.95rem}
+.recap div > span:last-child{white-space:nowrap}
+.recap div{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.recap .muted{color:var(--choco-soft)}
+
+/* Done */
+.done{text-align:center;padding:12px 0}
+.done svg.big{width:150px;margin:0 auto 6px}
+.done h3{font-family:var(--script);font-weight:400;font-size:2.4rem;color:var(--bordeaux);line-height:1.05;margin-bottom:8px}
+.code{display:inline-block;background:var(--blush);color:var(--pink-deep);font-weight:800;font-size:1.5rem;letter-spacing:.06em;padding:.3em .9em;border-radius:14px;margin:8px 0 16px}
+.done p{color:var(--choco-soft);margin-bottom:12px}
+.notice{background:#FFF6E3;border:1px solid #F1D79A;border-radius:var(--radius-sm);padding:12px 14px;font-size:.93rem;text-align:left;margin:14px 0;color:var(--choco)}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:16px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}
+.modal.on{opacity:1;visibility:visible}
+.m-scrim{position:absolute;inset:0;background:rgba(43,21,16,.5)}
+.modal-card{background:var(--cream);border-radius:var(--radius-lg);width:min(460px,100%);max-height:90vh;overflow-y:auto;padding:24px;transform:translateY(16px);transition:transform .25s;position:relative}
+.modal.on .m-scrim{position:absolute;inset:0;background:rgba(43,21,16,.5)}
+.modal-card{transform:none}
+.modal-card .x{position:absolute;top:16px;right:16px}
+.m-art{width:120px;height:120px;margin:0 auto 10px;background:var(--blush-soft);border-radius:24px;padding:16px}
+.modal-card h3{font-family:var(--script);font-weight:400;font-size:2rem;color:var(--bordeaux);text-align:center;line-height:1.05}
+.modal-card > p{text-align:center;color:var(--choco-soft);margin-bottom:18px}
+.opt-group{margin-bottom:16px}
+.opt-group .lbl{font-weight:700;color:var(--choco);margin-bottom:8px;display:block}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{padding:.45em 1em;border-radius:999px;background:#fff;border:2px solid var(--line);font-weight:600;font-size:.95rem}
+.opt[aria-pressed="true"]{border-color:var(--pink);background:var(--pink);color:#fff}
+
+/* Toast */
+.toast{transition:transform .3s cubic-bezier(.2,1.4,.4,1),visibility .3s;position:fixed;left:50%;bottom:24px;transform:translate(-50%,calc(100% + 40px));visibility:hidden;pointer-events:none;background:var(--choco);color:#fff;padding:.8em 1.3em;border-radius:999px;font-weight:700;z-index:90;transition:transform .3s cubic-bezier(.2,1.4,.4,1);display:flex;gap:10px;align-items:center;max-width:calc(100% - 32px)}
+.toast.on{transform:translate(-50%,0);visibility:visible}
+.toast svg{width:22px;height:22px;flex:none}
+
+/* Mobile cart bar */
+.mbar{display:none}
+
+@media (max-width:980px){
+  .hero-in{padding:40px 0 96px}
+  .hero::before{background:linear-gradient(180deg,rgba(62,12,25,.72) 0%,rgba(91,20,38,.86) 55%,rgba(62,12,25,.95) 100%)}
+  .hero-sticker{display:none}
+  .sticker{width:104px;height:104px;font-size:1.05rem}
+  .builder{grid-template-columns:1fr}
+  .deals{grid-template-columns:1fr 1fr}
+  .bday{grid-template-columns:1fr;padding:36px 28px}
+  .bday-art{max-width:320px}
+  .infos{grid-template-columns:1fr}
+  .nav{display:none}
+  .cart-btn{margin-left:auto}
+}
+@media (max-width:720px){
+  body{font-size:16px}
+  .top-in{height:64px;gap:12px}
+  .status{display:none}
+  .brand-logo{height:38px}
+  .cart-btn .lbl{display:none}
+  .steps{grid-template-columns:1fr;margin-top:-48px}
+  .sec{padding:72px 0}
+  .grid{grid-template-columns:1fr 1fr;gap:12px}
+  .card{padding:12px 12px 14px;border-radius:22px}
+  .card h3{font-size:1.02rem}
+  .card p{font-size:.84rem}
+  .price{font-size:1.05rem}
+  .add{width:40px;height:40px}
+  .badge{top:18px;left:18px;font-size:.9rem}
+  .deals{grid-template-columns:1fr}
+  .deal{min-height:0}
+  .info-card{padding:24px}
+  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;background:var(--bordeaux);color:#fff;border-radius:999px;padding:8px 8px 8px 20px;align-items:center;justify-content:space-between;box-shadow:0 12px 30px -8px rgba(62,12,25,.6);transform:translateY(150%);transition:transform .3s}
+  .mbar.on{transform:none}
+  .mbar strong{font-size:1.05rem}
+  .mbar .btn{padding:.65em 1.2em}
+  .foot{padding-bottom:96px}
+  .toast{bottom:84px}
+}
+
+/* Photos */
+.ph{width:100%;height:100%;object-fit:cover;display:block}
+.ph.cut{object-fit:contain}
+.card-art.photo{padding:0;overflow:hidden;background:#EEE9E6}
+.card-art.photo .ph{transition:transform .5s cubic-bezier(.3,1.4,.5,1)}
+.card:hover .card-art.photo .ph{transform:scale(1.07) rotate(-5deg)}
+.badge.best{background:var(--choco);color:#fff}
+.pal .ph{width:72px;height:72px;margin:0 auto 6px}
+.pal span{display:block}
+.slot.filled{padding:2%}
+.line-art .ph,.m-art .ph{border-radius:10px}
+.mini-box{display:grid;grid-template-columns:1fr 1fr;gap:2px;width:100%;height:100%;background:var(--pink);border-radius:8px;padding:3px}
+.mini-box .ph{padding:2px}
+.combo{position:relative;width:100%;height:100%}
+.combo .ph{width:78%;height:78%;position:absolute;left:0;bottom:0}
+.combo span{position:absolute;right:-4%;top:-4%;width:50%;height:62%}
+.combo span svg{width:100%;height:100%}
+.bday-art .ph{width:42%;height:auto;aspect-ratio:1;margin:0 -6%}
+.bday-art .ph:nth-child(2){transform:translateY(-22%) scale(1.2);z-index:1}
+.bday-art .ph{filter:drop-shadow(0 14px 18px rgba(0,0,0,.35))}
+.i-donut .ph{filter:drop-shadow(0 12px 14px rgba(0,0,0,.35))}
+
+/* ============ INTRO ============ */
+.intro{position:fixed;inset:0;z-index:100;background:var(--bordeaux);cursor:pointer;transition:transform .95s cubic-bezier(.75,0,.2,1)}
+.intro::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(236,76,138,.42),transparent 62%);pointer-events:none}
+.intro.out{transform:translateY(calc(-100% - 110px))}
+.intro-drip{position:absolute;left:0;right:0;top:calc(100% - 1px);height:110px;color:var(--bordeaux);pointer-events:none}
+.intro-stage{position:absolute;inset:0;overflow:hidden}
+.i-title{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;text-align:center;pointer-events:none;width:min(640px,86vw)}
+.intro-logo{width:100%;height:auto;opacity:0;filter:drop-shadow(0 16px 30px rgba(0,0,0,.45))}
+.i-title p{font-weight:700;color:#F6E3EA;margin-top:10px;font-size:clamp(.95rem,2.6vw,1.25rem);opacity:0}
+.i-don{position:absolute;left:0;top:0;z-index:1;will-change:transform;filter:drop-shadow(0 14px 16px rgba(0,0,0,.4))}
+.i-don img{width:100%;height:100%;display:block}
+.i-spr{position:absolute;left:50%;top:50%;width:12px;height:4px;border-radius:2px;background:var(--c);opacity:0;z-index:2}
+.intro.burst .i-spr{animation:iBurst .9s cubic-bezier(.15,.8,.3,1) both}
+@keyframes iBurst{
+  0%{transform:translate(-50%,-50%) rotate(var(--r)) translateX(0);opacity:1}
+  80%{opacity:1}
+  100%{transform:translate(-50%,-50%) rotate(var(--r)) translateX(var(--d)) rotate(220deg);opacity:0}
+}
+.i-skip{position:absolute;right:16px;bottom:16px;z-index:4;color:#F3DCE4;font-weight:700;font-size:.9rem;padding:.5em 1em;border-radius:999px;background:rgba(255,255,255,.1)}
+.i-skip:hover{background:rgba(255,255,255,.2)}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-stage" id="introStage">
+    <div class="i-title">
+      <img class="intro-logo" id="introLogo" src="logo-ohmydonut.webp" alt="" width="1200" height="403">
+      <p id="introTag">Par amour &amp; pour la gourmandise</p>
+    </div>
+  </div>
+  <button class="i-skip" id="introSkip" tabindex="-1">Passer</button>
+  <svg class="intro-drip" viewBox="0 0 1440 110" preserveAspectRatio="none"><path fill="currentColor" d="M0 0h1440v34c-30 0-36 22-62 22s-28-36-58-36-30 70-62 70-30-56-60-56-34 24-64 24-28-44-58-44-34 82-66 82-32-70-62-70-30 30-60 30-30-40-62-40-30 58-62 58-30-48-60-48-34 20-64 20-30-36-60-36-32 64-64 64-30-52-62-52-30 26-60 26-32-30-62-30-30 46-60 46-32-40-60-40V0Z"/><circle cx="378" cy="96" r="9" fill="currentColor"/><circle cx="822" cy="102" r="8" fill="currentColor"/><circle cx="1124" cy="82" r="7" fill="currentColor"/></svg>
+</div>
+<script>
+try{ if(matchMedia('(prefers-reduced-motion: reduce)').matches){ document.getElementById('intro').remove(); } }catch(e){}
+</script>
+
+<!-- ============ HEADER ============ -->
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top" aria-label="Oh My Donut, accueil">
+      <img class="brand-logo" src="logo-ohmydonut.webp" alt="Oh My Donut" width="1200" height="403">
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#carte">La carte</a>
+      <a href="#box">Composer une box</a>
+      <a href="#bons-plans">Bons plans</a>
+      <a href="#infos">Infos</a>
+    </nav>
+    <span class="status" id="status"><i></i><span>…</span></span>
+    <button class="cart-btn" id="openCart" aria-label="Ouvrir le panier">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span class="lbl">Panier</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="hero-boutique-poster.jpg" aria-hidden="true">
+    <source src="hero-boutique-mobile.mp4" type="video/mp4" media="(max-width: 720px)">
+    <source src="hero-boutique-mobile.webm" type="video/webm" media="(max-width: 720px)">
+    <source src="hero-boutique.mp4" type="video/mp4">
+    <source src="hero-boutique.webm" type="video/webm">
+  </video>
+  <div class="wrap hero-in">
+    <div class="hero-content">
+      <h1 class="hero-title"><img class="hero-logo" src="logo-ohmydonut.webp" alt="Oh My Donut" width="1200" height="403" fetchpriority="high"></h1>
+      <p class="lead">Donuts gourmands, bubble tea, café gourmand et smoothies au cœur de Reims. Tu commandes ici, on prépare, tu passes récupérer au 19 rue des Capucins.</p>
+      <div class="hero-cta">
+        <a class="btn btn-pink" href="#carte">Commander en click & collect</a>
+        <a class="btn btn-ghost" href="#box">Composer ma box</a>
+      </div>
+      <div class="hero-meta">
+        <a class="chip" id="reviewsLink" target="_blank" rel="noopener"><span class="stars" aria-hidden="true">★★★★★</span> 5,0 sur 44 avis Google</a>
+        <span class="chip">Lun–sam 10h–22h, dim 13h–20h</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-sticker" aria-hidden="true">Prêt en<br>20 min</div>
+  <svg class="drip" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0 48V22c40 0 50 18 90 18s40-28 90-28 40 34 90 34 50-20 100-20 30 14 80 14 60-30 110-30 40 26 90 26 50-12 100-12 40 22 90 22 50-30 100-30 40 18 90 18 50-24 100-24 40 30 90 30 60-16 110-16 40 10 70 10V48Z"/></svg>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<div class="wrap">
+  <ol class="steps" aria-label="Comment fonctionne le click & collect">
+    <li class="step"><b>1</b><div><h3>Choisis tes gourmandises</h3><p>Donuts à l'unité, box à composer, boissons et formules.</p></div></li>
+    <li class="step"><b>2</b><div><h3>Choisis ton créneau</h3><p>Aujourd'hui ou demain, par tranche de 15 minutes.</p></div></li>
+    <li class="step"><b>3</b><div><h3>Récupère en boutique</h3><p>Donne ton numéro de commande au comptoir et paie sur place.</p></div></li>
+  </ol>
+</div>
+
+<!-- ============ MENU ============ -->
+<section class="sec" id="carte">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>La carte</h2>
+      <div class="tabs" role="tablist" id="tabs"></div>
+    </div>
+    <div class="grid" id="grid" role="tabpanel"></div>
+  </div>
+</section>
+
+<!-- ============ BOX BUILDER ============ -->
+<section class="sec box-sec" id="box">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Compose ta box</h2>
+      <p>Choisis la taille, remplis-la avec tes donuts préférés. Clique sur un donut dans la box pour le retirer.</p>
+    </div>
+    <div class="builder">
+      <div>
+        <div class="sizes" id="sizes"></div>
+        <p class="palette-title">Ajoute tes donuts</p>
+        <div class="palette" id="palette"></div>
+      </div>
+      <div class="box">
+        <div class="box-lid">
+          <span class="t" id="boxTitle">Box de 6</span>
+          <span class="c" id="boxCount">0 / 6</span>
+        </div>
+        <div class="slots" id="slots"></div>
+        <div class="box-actions">
+          <div>
+            <div class="box-total" id="boxPrice">0,00 €</div>
+            <button class="link-btn" id="boxRandom">Remplir au hasard</button>
+          </div>
+          <button class="btn btn-choco" id="boxAdd" disabled>Ajouter la box</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEALS ============ -->
+<section class="sec" id="bons-plans">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Les bons plans</h2>
+      <p>Les offres du moment, en boutique et en click & collect.</p>
+    </div>
+    <div class="deals">
+      <article class="deal d1">
+        <div class="big">5 €</div>
+        <h3>Offre étudiante</h3>
+        <p>1 donut + 1 boisson fraîche au choix. Carte étudiante au retrait.</p>
+        <button class="btn btn-pink" data-add="f-etudiant">Je prends</button>
+      </article>
+      <article class="deal d2">
+        <div class="big">5 €</div>
+        <h3>Petit déjeuner du matin</h3>
+        <p>Donut, cookie ou muffin avec un café chaud pour bien démarrer. Jusqu’à 11h.</p>
+        <button class="btn btn-pink" data-add="f-petitdej">Je prends</button>
+      </article>
+      <article class="deal d3">
+        <div class="big" style="color:var(--pink)">−10 %</div>
+        <h3>Pour nos héros du quotidien</h3>
+        <p>Militaires, pompiers, policiers, médecins et aides-soignants. Sur présentation d'un justificatif en boutique, non cumulable.</p>
+      </article>
+      <article class="deal d4">
+        <div class="big">1 €</div>
+        <h3>L'expresso</h3>
+        <p>Le petit plaisir à petit prix. Et nos invendus partent sur Too Good To Go, zéro gaspillage.</p>
+        <button class="btn btn-pink" data-add="b-expresso">Ajouter</button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIRTHDAY ============ -->
+<section class="wrap" aria-labelledby="bdayTitle">
+  <div class="bday">
+    <div>
+      <h2 id="bdayTitle">Un anniversaire ?</h2>
+      <p>Mini, classiques ou gros donuts, aux saveurs de ton choix. Pour un anniversaire, un pot au bureau ou un baby shower, réserve au moins 48h avant, jusqu'à 30 jours à l'avance, et on s'occupe de tout.</p>
+      <div class="hero-cta" style="margin:0">
+        <button class="btn btn-pink" id="bdayOrder">Réserver pour un événement</button>
+        <a class="btn btn-ghost" id="bdayCall">Appeler la boutique</a>
+      </div>
+    </div>
+    <div class="bday-art" id="bdayArt" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ============ INFOS ============ -->
+<section class="sec" id="infos">
+  <div class="wrap">
+    <div class="sec-head"><h2>Passe nous voir</h2></div>
+    <div class="infos">
+      <div class="info-card">
+        <h3>Oh My Donut Reims</h3>
+        <ul class="info-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><strong>Adresse</strong><a id="addrLink" target="_blank" rel="noopener">19 rue des Capucins, 51100 Reims</a>
+            <div class="nav-btns" aria-label="Itinéraire vers la boutique">
+              <a class="nav-btn waze" id="navWaze" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2Z"/></svg>Waze</a>
+              <a class="nav-btn gmaps" id="navGmaps" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Google Maps</a>
+              <a class="nav-btn plans" id="navPlans" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8 17h5a3 3 0 0 0 0-6h-2a3 3 0 0 1 0-6h5"/></svg>Plans</a>
+            </div></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><strong>Horaires</strong><span>Du lundi au samedi, de 10h à 22h<br>Le dimanche, de 13h à 20h<br>Dernier retrait 15 min avant la fermeture</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><strong>Téléphone</strong><a id="telLink"></a></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><div><strong>Instagram</strong><a id="igLink" target="_blank" rel="noopener">@ohmydonut51</a></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7l1 13h10l1-13M9 7V4h6v3"/></svg><div><strong>Sur place ou à emporter</strong><span>Donuts, bubble tea, milkshakes, smoothies, matcha et café gourmand.</span></div></li>
+        </ul>
+      </div>
+      <div class="map"><iframe id="mapFrame" title="Plan d'accès Oh My Donut, 19 rue des Capucins à Reims" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <img class="foot-logo" src="logo-ohmydonut.webp" alt="Oh My Donut" width="1200" height="403" loading="lazy">
+        <p>Par amour et pour la gourmandise. Donuts, bubble tea, café gourmand et smoothies à Reims.</p>
+      </div>
+      <nav aria-label="Pied de page">
+        <a href="#carte">La carte</a>
+        <a href="#box">Composer une box</a>
+        <a href="#bons-plans">Bons plans</a>
+        <a href="#infos">Adresse et horaires</a>
+      </nav>
+      <nav aria-label="Contact">
+        <a id="footIg" target="_blank" rel="noopener">Instagram</a>
+        <a id="footTel"></a>
+        <a href="mailto:ohmydonutreims@gmail.com">ohmydonutreims@gmail.com</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </nav>
+    </div>
+    <div class="legal">© <span id="year"></span> Oh My Donut Reims. Les prix sont indiqués TTC. Paiement au retrait en boutique.</div>
+  </div>
+</footer>
+
+<!-- Mobile cart bar -->
+<div class="mbar" id="mbar"><strong id="mbarTotal">0,00 €</strong><button class="btn btn-pink" id="mbarBtn">Voir mon panier</button></div>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drTitle" aria-hidden="true">
+  <div class="dr-head">
+    <h2 id="drTitle">Ton panier</h2>
+    <button class="x" id="closeCart" aria-label="Fermer le panier"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="dr-body" id="drBody"></div>
+  <div class="dr-foot" id="drFoot"></div>
+</aside>
+
+<!-- ============ OPTIONS MODAL ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="m-scrim" id="modalScrim"></div>
+  <div class="modal-card" id="modalCard"></div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =========================================================
+   CONFIGURATION BOUTIQUE (à vérifier avec le gérant)
+   ========================================================= */
+const SHOP = {
+  name: 'Oh My Donut',
+  address: '19 rue des Capucins, 51100 Reims',
+  phoneDisplay: '06 47 69 82 09',
+  phone: '+33647698209',
+  smsTo: '+33647698209',               // secours : SMS pré-rempli si l'envoi automatique échoue
+  email: 'ohmydonutreims@gmail.com',   // reçoit chaque commande par e-mail (FormSubmit, gratuit)
+  whatsappPhone: '33647698209',        // reçoit chaque commande sur WhatsApp (CallMeBot, gratuit)
+  whatsappKey: '',                     // clé CallMeBot à coller ici après activation (voir README)
+  instagram: 'https://www.instagram.com/ohmydonut51/',
+  reviews: 'https://www.google.com/search?q=Oh+my+donut+Reims+avis',
+  hours: {0:[13,20], 1:[10,22], 2:[10,22], 3:[10,22], 4:[10,22], 5:[10,22], 6:[10,22]}, // 0 = dimanche
+  leadMinutes: 20,                     // délai mini de préparation
+  slotStep: 15,
+  lastPickupBeforeClose: 15,           // dernier retrait 15 min avant la fermeture
+  orderEndpoint: '',                   // optionnel : URL d'un webhook (Make, n8n, API) qui reçoit la commande en JSON
+  maxDaysAhead: 30,                    // commande possible jusqu'à 30 jours à l'avance
+  eventMinDays: 2,                     // événements : au moins 48h à l'avance
+  sumup: {
+    enabled: false,                    // passer à true une fois les clés SumUp ajoutées sur Vercel (voir README)
+    depositRate: 0.30,                 // acompte = 30 % du total
+    minDeposit: 5,                     // acompte minimum en euros
+    createUrl: '/api/sumup-checkout',
+    statusUrl: '/api/sumup-status'
+  }
+};
+
+/* =========================================================
+   CATALOGUE (prix indicatifs à valider)
+   art: glaze = nappage, top = type de garniture, tc = couleurs garniture
+   ========================================================= */
+const SPRINK = ['#FFFFFF','#F7C948','#4FC3F7','#EC4C8A','#7BD389','#B388EB'];
+const SOFTS = ['Eau','Coca-Cola','Coca-Cola Zéro','Fanta','Sprite','Ice Tea pêche','Oasis Tropical'];
+const PRODUCTS = [
+  // Donuts
+  {id:'bueno-white', cat:'donuts', tier:'premium', name:'Bueno White', desc:'Chocolat blanc, éclats de noisettes, filet de chocolat et sa barre Bueno.', price:3.5, best:true, img:'donut-bueno-white.webp'},
+  {id:'kinder-country', cat:'donuts', tier:'premium', name:'Kinder Country', desc:'Céréales soufflées, double filet de chocolat et une barre Kinder Country.', price:3.5, best:true, img:'donut-kinder-country.webp'},
+  {id:'pistache', cat:'donuts', tier:'gourmand', name:'Pistache', desc:'Glaçage pistache, éclats de pistache, grains croustillants et filet vert.', price:3.0, best:true, img:'donut-pistache.webp'},
+  {id:'speculos', cat:'donuts', tier:'gourmand', name:'Spéculos', desc:'Crème vanille marbrée, crumble de spéculoos et filet de chocolat blanc.', price:3.0, best:true, img:'donut-speculos.webp'},
+  {id:'oreo', cat:'donuts', tier:'gourmand', name:'Oreo', desc:'Crème vanille sous une montagne de biscuits Oreo et filet de chocolat blanc.', price:3.0, best:true, img:'donut-oreo.webp'},
+  {id:'mms', cat:'donuts', tier:'gourmand', name:'M&M’s', desc:'Chocolat et éclats de M&M’s croquants, plein de couleurs.', price:3.0, best:true, img:'donut-mms.webp'},
+  {id:'fraise', cat:'donuts', tier:'classique', name:'Fraise', desc:'Glaçage fraise et vermicelles multicolores. Le classique qu’on adore.', price:2.5, best:true, img:'donut-fraise.webp'},
+  {id:'biscuit-rose-reims', cat:'donuts', tier:'premium', name:'Biscuit rose de Reims', desc:'Glaçage rose pailleté et un vrai biscuit rose de Reims. Notre fierté locale.', price:3.5, tag:'sig', img:'donut-biscuit-rose-reims.webp'},
+  {id:'cafe', cat:'donuts', tier:'classique', name:'Café', desc:'Glaçage chocolat au café et vermicelles chocolat.', price:2.5, tag:'new', img:'donut-cafe.webp'},
+  {id:'cafe-speculos', cat:'donuts', tier:'gourmand', name:'Café Spéculos', desc:'Glaçage café brillant et couronne de crumble spéculoos.', price:3.0, tag:'new', img:'donut-cafe-speculos.webp'},
+  {id:'bueno-lait', cat:'donuts', tier:'premium', name:'Bueno Lait', desc:'Chocolat au lait, noisettes concassées, filet blanc et sa barre Bueno.', price:3.5, img:'donut-bueno-lait.webp'},
+  {id:'kitkat', cat:'donuts', tier:'gourmand', name:'Kit Kat', desc:'Chocolat au lait, éclats de Kit Kat et filet de chocolat.', price:3.0, img:'donut-kitkat.webp'},
+  {id:'lion', cat:'donuts', tier:'gourmand', name:'Lion', desc:'Enrobage chocolat croustillant, caramel et céréales.', price:3.0, img:'donut-lion.webp'},
+  {id:'daim', cat:'donuts', tier:'gourmand', name:'Daim', desc:'Chocolat au lait et billes croustillantes au caramel.', price:3.0, img:'donut-daim.webp'},
+  {id:'nutella-bready', cat:'donuts', tier:'premium', name:'Nutella B-ready', desc:'Crumble chocolat, filet de Nutella et un B-ready croustillant.', price:3.5, img:'donut-nutella-bready.webp'},
+  {id:'pistache-nutella', cat:'donuts', tier:'premium', name:'Pistache Nutella', desc:'Crème pistache, éclats de pistache et trait de Nutella.', price:3.5, img:'donut-pistache-nutella.webp'},
+  {id:'pralines-amande-pistache', cat:'donuts', tier:'premium', name:'Pralinés Amande Pistache', desc:'Pralines roses concassées et généreux filet pistache.', price:3.5, img:'donut-pralines-amande-pistache.webp'},
+  {id:'speculos-caramel', cat:'donuts', tier:'gourmand', name:'Spéculos Caramel Beurre Salé', desc:'Caramel beurre salé et crumble de spéculoos.', price:3.0, img:'donut-speculos-caramel.webp'},
+  {id:'smarties', cat:'donuts', tier:'gourmand', name:'Smarties', desc:'Chocolat recouvert de Smarties de toutes les couleurs.', price:3.0, img:'donut-smarties.webp'},
+  {id:'tagada', cat:'donuts', tier:'gourmand', name:'Tagada', desc:'Glaçage framboise pailleté et fraises Tagada.', price:3.0, img:'donut-tagada.webp'},
+  {id:'marshmallow-chocolat', cat:'donuts', tier:'gourmand', name:'Marshmallow chocolat', desc:'Chocolat au lait, guimauves blanches et roses, filet chocolat.', price:3.0, img:'donut-marshmallow-chocolat.webp'},
+  {id:'marshmallow-fraise', cat:'donuts', tier:'gourmand', name:'Marshmallow fraise', desc:'Glaçage fraise et guimauves blanches et roses.', price:3.0, img:'donut-marshmallow-fraise.webp'},
+  {id:'citron-meringue', cat:'donuts', tier:'gourmand', name:'Citron meringué', desc:'Crème citron, zestes et meringues dorées au chalumeau.', price:3.0, img:'donut-citron-meringue.webp'},
+  {id:'framboise-chocolat-blanc', cat:'donuts', tier:'gourmand', name:'Framboise chocolat blanc', desc:'Chocolat blanc, copeaux et éclats de framboise.', price:3.0, img:'donut-framboise-chocolat-blanc.webp'},
+  {id:'fruits-rouges', cat:'donuts', tier:'classique', name:'Fruits rouges', desc:'Glaçage rose et éclats de fruits rouges.', price:2.5, img:'donut-fruits-rouges.webp'},
+  {id:'chocolat-lait', cat:'donuts', tier:'classique', name:'Chocolat lait', desc:'Glaçage chocolat au lait et vermicelles chocolat.', price:2.5, img:'donut-chocolat-lait.webp'},
+  {id:'chocolat-blanc', cat:'donuts', tier:'classique', name:'Chocolat blanc', desc:'Glaçage chocolat blanc et copeaux de chocolat blanc.', price:2.5, img:'donut-chocolat-blanc.webp'},
+  {id:'nature-sucre', cat:'donuts', tier:'classique', name:'Nature au sucre', desc:'Le donut glacé tout simple, moelleux et fondant.', price:2.0, img:'donut-nature-sucre.webp'},
+  // Muffins
+  {id:'m-choco', cat:'muffins', name:'My Muffin chocolat', desc:'Cœur fondant et pépites de chocolat.', price:2.8, art:{kind:'muffin', top:'#4A2418', tc:['#2A140C']}},
+  {id:'m-pistache', cat:'muffins', name:'My Muffin pistache', desc:'Pâte pistache, glaçage et éclats.', price:3.0, art:{kind:'muffin', top:'#C6D98A', tc:['#7FA34A','#F4F0DC']}},
+  {id:'m-speculos', cat:'muffins', name:'My Muffin spéculos', desc:'Crumble spéculoos croustillant.', price:3.0, art:{kind:'muffin', top:'#B4703A', tc:['#7E4519','#C9874A']}},
+  {id:'brookie', cat:'muffins', name:'Brookie', desc:'Moitié brownie, moitié cookie, nappé de chocolat, spéculos et noisettes.', price:3.5, img:'donut-brookie.webp'},
+  {id:'m-cookie', cat:'muffins', name:'Cookie maison', desc:'Gros cookie aux pépites de chocolat.', price:2.5, art:{kind:'cookie'}},
+  // Boissons
+  {id:'b-bubble', cat:'boissons', name:'Bubble tea', desc:'Thé glacé et perles à choisir.', price:5.5, art:{kind:'cup', liquid:'#E9B48A', pearls:true},
+    options:[{label:'Parfum', choices:['Lait classique','Taro','Fraise','Mangue','Matcha']},{label:'Perles', choices:['Tapioca','Popping fraise','Popping mangue']}]},
+  {id:'b-milkshake', cat:'boissons', name:'Milkshake', desc:'Onctueux, avec chantilly.', price:5.0, art:{kind:'cup', liquid:'#F7B6CC', cream:true},
+    options:[{label:'Parfum', choices:['Vanille','Fraise','Chocolat','Spéculos','Cookies & cream']}]},
+  {id:'b-smoothie', cat:'boissons', name:'Smoothie', desc:'Fruits mixés minute.', price:5.0, art:{kind:'cup', liquid:'#F6A23B'},
+    options:[{label:'Recette', choices:['Mangue passion','Fraise banane','Fruits rouges']}]},
+  {id:'b-granita', cat:'boissons', name:'Granita', desc:'Glace pilée, ultra fraîche.', price:4.0, art:{kind:'cup', liquid:'#57C7E8'},
+    options:[{label:'Parfum', choices:['Fraise','Citron','Blue raspberry','Pastèque']}]},
+  {id:'b-matcha', cat:'boissons', name:'Matcha latte', desc:'Matcha et lait, chaud ou glacé.', price:4.5, art:{kind:'cup', liquid:'#9CC46A'},
+    options:[{label:'Service', choices:['Glacé','Chaud']}]},
+  {id:'b-gourmand', cat:'boissons', name:'Café gourmand', desc:'Un café et ses mini gourmandises.', price:5.5, art:{kind:'mug', liquid:'#3B1E12'}},
+  {id:'b-cappu', cat:'boissons', name:'Cappuccino', desc:'Expresso, lait mousseux, cacao.', price:3.0, art:{kind:'mug', liquid:'#C8946A', foam:true}},
+  {id:'b-expresso', cat:'boissons', name:'Expresso', desc:'Le petit plaisir à petit prix.', price:1.0, art:{kind:'mug', liquid:'#2A140C', small:true}},
+  // Formules
+  {id:'f-etudiant', cat:'formules', name:'Offre étudiante', desc:'1 donut + 1 boisson fraîche. Carte étudiante au retrait.', price:5.0, art:{kind:'combo', a:'fraise', b:'soft'},
+    options:[{label:'Ton donut', choices:'DONUTS'},{label:'Ta boisson', choices:SOFTS}]},
+  {id:'f-petitdej', cat:'formules', name:'Petit déjeuner', desc:'Donut, cookie ou muffin + un café chaud. Retrait jusqu’à 11h.', price:5.0, until:11*60, art:{kind:'combo', a:'nature-sucre', b:'mug'},
+    options:[{label:'Ta gourmandise', choices:['Donut nature au sucre','Cookie','Muffin chocolat']},{label:'Ton café', choices:['Expresso','Café allongé','Cappuccino']}]},
+];
+const BOX_SIZES = [
+  {n:4, price:11.0, cols:2},
+  {n:6, price:15.9, cols:3},
+  {n:12, price:29.9, cols:4},
+];
+const CATS = [
+  {id:'best', label:'Best-sellers', f:p => p.best},
+  {id:'gourmands', label:'Gourmands', f:p => p.cat==='donuts' && p.tier!=='classique'},
+  {id:'classiques', label:'Classiques', f:p => p.cat==='donuts' && p.tier==='classique'},
+  {id:'muffins', label:'Brookie & muffins'},
+  {id:'boissons', label:'Boissons'},
+  {id:'formules', label:'Formules'},
+];
+
+/* =========================================================
+   UTILITAIRES
+   ========================================================= */
+const $ = s => document.querySelector(s);
+const euro = n => n.toFixed(2).replace('.', ',') + ' €';
+const byId = id => PRODUCTS.find(p => p.id === id);
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+};
+function rng(seedStr){
+  let h = 1779033703 ^ seedStr.length;
+  for (let i=0;i<seedStr.length;i++){ h = Math.imul(h ^ seedStr.charCodeAt(i), 3432918353); h = h << 13 | h >>> 19; }
+  return function(){ h = Math.imul(h ^ h >>> 16, 2246822507); h = Math.imul(h ^ h >>> 13, 3266489909); h ^= h >>> 16; return (h >>> 0) / 4294967296; };
+}
+let uid = 0;
+
+/* =========================================================
+   ILLUSTRATIONS SVG (remplaçables par de vraies photos)
+   ========================================================= */
+function donutSVG(a, seed='x'){
+  const r = rng(seed); const id = 'g' + (++uid);
+  const cx = 100, cy = 100;
+  // glaze wavy outline
+  let pts = [];
+  const lobes = 9 + Math.floor(r()*4);
+  for (let i=0;i<=72;i++){
+    const t = i/72*Math.PI*2;
+    const rad = 72 + Math.sin(t*lobes + r()*0.6)*4.5 + (r()-.5)*2.2;
+    pts.push([cx+Math.cos(t)*rad, cy+Math.sin(t)*rad]);
+  }
+  const glazePath = 'M' + pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join('L') + 'Z';
+  let tops = '';
+  const inAnnulus = () => { const t = r()*Math.PI*2, d = 38 + r()*30; return [cx+Math.cos(t)*d, cy+Math.sin(t)*d]; };
+  if (a.top === 'sprinkles' || a.top === 'jimmies'){
+    const n = a.top === 'jimmies' ? 70 : 46;
+    for (let i=0;i<n;i++){ const [x,y] = inAnnulus(); const c = a.tc[Math.floor(r()*a.tc.length)];
+      const w = a.top === 'jimmies' ? 6 : 11, h = a.top === 'jimmies' ? 2.4 : 3.6;
+      tops += `<rect x="${(x-w/2).toFixed(1)}" y="${(y-h/2).toFixed(1)}" width="${w}" height="${h}" rx="${h/2}" fill="${c}" transform="rotate(${Math.floor(r()*180)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`; }
+  }
+  if (a.top === 'crumbs'){
+    for (let i=0;i<60;i++){ const [x,y] = inAnnulus(); const c = a.tc[Math.floor(r()*a.tc.length)]; const s = 2 + r()*4.5;
+      tops += `<path d="M${(x-s).toFixed(1)} ${y.toFixed(1)}l${(s*.8).toFixed(1)} ${(-s*.9).toFixed(1)}l${(s*1.1).toFixed(1)} ${(s*.3).toFixed(1)}l${(-s*.3).toFixed(1)} ${(s*1.1).toFixed(1)}Z" fill="${c}"/>`; }
+  }
+  if (a.top === 'coco'){
+    for (let i=0;i<90;i++){ const [x,y] = inAnnulus(); tops += `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="5" height="1.6" rx=".8" fill="#FFFFFF" stroke="#EADFCF" stroke-width=".4" transform="rotate(${Math.floor(r()*180)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`; }
+  }
+  if (a.top === 'drizzle'){
+    let d = 'M18 40'; let up = true;
+    for (let x=30;x<=190;x+=13){ d += ` L${x} ${up?150+r()*20:40+r()*20}`; up = !up; }
+    tops += `<path d="${d}" fill="none" stroke="${a.tc[0]}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" clip-path="url(#${id}c)" opacity=".95"/>`;
+  }
+  if (a.top === 'biscuit'){
+    for (let i=0;i<40;i++){ const [x,y] = inAnnulus(); tops += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(1+r()*1.6).toFixed(1)}" fill="#E5688F"/>`; }
+    tops += `<g transform="rotate(-28 128 70)"><rect x="96" y="56" width="64" height="26" rx="8" fill="#F7C4D4"/><rect x="96" y="56" width="64" height="26" rx="8" fill="none" stroke="#E79AB4" stroke-width="2"/>`;
+    for (let i=0;i<14;i++) tops += `<circle cx="${100+r()*56}" cy="${60+r()*18}" r="1.4" fill="#fff"/>`;
+    tops += `</g>`;
+  }
+  let sugar = '';
+  if (a.top === 'sugar'){
+    for (let i=0;i<220;i++){ const t = r()*Math.PI*2, d = 26 + r()*62; sugar += `<circle cx="${(cx+Math.cos(t)*d).toFixed(1)}" cy="${(cy+Math.sin(t)*d).toFixed(1)}" r="${(0.8+r()*1.4).toFixed(1)}" fill="#FFF" opacity="${(.6+r()*.4).toFixed(2)}"/>`; }
+  }
+  const glaze = a.glaze ? `<path d="${glazePath}" fill="${a.glaze}"/>
+    <path d="M58 60 A58 58 0 0 1 120 42" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".32"/>
+    <circle cx="${cx}" cy="${cy}" r="31" fill="#EDB673"/>` : '';
+  return `<svg viewBox="0 0 200 200" aria-hidden="true">
+    <defs><mask id="${id}m"><rect width="200" height="200" fill="#fff"/><circle cx="${cx}" cy="${cy}" r="23" fill="#000"/></mask>
+      <clipPath id="${id}c"><path d="${glazePath}"/></clipPath>
+      <radialGradient id="${id}d" cx="50%" cy="45%" r="55%"><stop offset="60%" stop-color="#EAB06C"/><stop offset="100%" stop-color="#C98745"/></radialGradient></defs>
+    <g mask="url(#${id}m)">
+      <circle cx="${cx}" cy="${cy}" r="90" fill="url(#${id}d)"/>
+      <circle cx="${cx}" cy="${cy}" r="30" fill="#C98745"/>
+      ${glaze}${tops}${sugar}
+    </g></svg>`;
+}
+function muffinSVG(a, seed='m'){
+  const r = rng(seed); let bits='';
+  for (let i=0;i<26;i++){ const x = 52 + r()*96, y = 50 + r()*50; bits += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(2+r()*3).toFixed(1)}" fill="${a.tc[Math.floor(r()*a.tc.length)]}"/>`; }
+  return `<svg viewBox="0 0 200 200" aria-hidden="true">
+    <path d="M44 106h112l-14 74H58Z" fill="#fff" stroke="#EC4C8A" stroke-width="4" stroke-linejoin="round"/>
+    ${[62,80,100,120,138].map(x=>`<path d="M${x} 108 ${x+ (x-100)*.08} 178" stroke="#F6B2CA" stroke-width="3"/>`).join('')}
+    <path d="M36 112c-8-30 14-40 22-42 2-26 30-40 50-30 22-12 52 4 50 30 18 4 26 24 18 42Z" fill="${a.top}"/>
+    <path d="M60 64c10-12 28-16 40-10" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none" opacity=".25"/>
+    ${bits}</svg>`;
+}
+function cookieSVG(seed='c'){
+  const r = rng(seed); let chips='';
+  for (let i=0;i<16;i++){ const t = r()*Math.PI*2, d = r()*60; chips += `<path d="M${(100+Math.cos(t)*d).toFixed(1)} ${(100+Math.sin(t)*d).toFixed(1)}l6 -4l5 6l-6 5Z" fill="#3B1E12"/>`; }
+  return `<svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="82" fill="#D49A5C"/><circle cx="100" cy="100" r="82" fill="none" stroke="#B87A3E" stroke-width="5" stroke-dasharray="14 9"/>${chips}</svg>`;
+}
+function cupSVG(a){
+  const pearls = a.pearls ? [0,1,2,3,4,5,6,7,8,9,10].map(i=>`<circle cx="${70+ (i%6)*12 + (i>5?6:0)}" cy="${170 - (i>5?12:0)}" r="6" fill="#2A140C"/>`).join('') : '';
+  const cream = a.cream ? `<path d="M56 62c-6-18 16-24 22-16 4-16 34-18 40-2 10-10 30 0 26 18Z" fill="#fff" stroke="#F3D7E1" stroke-width="2"/><circle cx="100" cy="32" r="8" fill="#E5384F"/>` : `<ellipse cx="100" cy="62" rx="46" ry="9" fill="#fff" opacity=".9"/>`;
+  return `<svg viewBox="0 0 200 200" aria-hidden="true">
+    <rect x="112" y="6" width="10" height="80" rx="5" fill="#EC4C8A" transform="rotate(14 117 46)"/>
+    <path d="M52 62h96l-12 122a8 8 0 0 1-8 7H72a8 8 0 0 1-8-7Z" fill="${a.liquid}"/>
+    <path d="M52 62h96l-12 122a8 8 0 0 1-8 7H72a8 8 0 0 1-8-7Z" fill="none" stroke="#fff" stroke-width="3" opacity=".7"/>
+    ${pearls}
+    <path d="M66 80 76 176" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+    <circle cx="100" cy="122" r="18" fill="#FBF7F3"/><circle cx="100" cy="122" r="13" fill="none" stroke="#EC4C8A" stroke-width="3"/>
+    ${cream}</svg>`;
+}
+function mugSVG(a){
+  const s = a.small ? .82 : 1;
+  return `<svg viewBox="0 0 200 200" aria-hidden="true"><g transform="translate(${100-100*s} ${110-110*s}) scale(${s})">
+    <ellipse cx="96" cy="170" rx="74" ry="12" fill="#E8D5CD"/>
+    <path d="M150 92c22 0 26 34 0 38" fill="none" stroke="#3E0C19" stroke-width="12"/>
+    <path d="M38 70h116v62a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42Z" fill="#5B1426"/>
+    <ellipse cx="96" cy="70" rx="58" ry="12" fill="${a.liquid}"/>
+    ${a.foam ? '<ellipse cx="96" cy="69" rx="48" ry="8" fill="#F2E3D2"/><path d="M80 68c8-6 24-6 32 0" stroke="#A9764F" stroke-width="3" fill="none"/>' : ''}
+    <path d="M78 40c-8-10 8-14 0-26M104 40c-8-10 8-14 0-26" stroke="#D2B7AC" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <circle cx="96" cy="118" r="16" fill="#FBF7F3"/><circle cx="96" cy="118" r="11" fill="none" stroke="#EC4C8A" stroke-width="3"/>
+    </g></svg>`;
+}
+function photo(p, cls=''){
+  const cut = cls === 'round';
+  const src = cut ? p.img.replace('donut-', 'cut-') : p.img;
+  return `<img class="ph ${cut ? 'cut' : cls}" src="${src}" alt="${p.name}" loading="lazy" decoding="async" width="${cut ? 340 : 600}" height="${cut ? 340 : 600}">`;
+}
+function artFor(p, seed){
+  if (p.img) return photo(p);
+  const a = p.art;
+  if (a.kind === 'donut') return donutSVG(a, seed || p.id);
+  if (a.kind === 'muffin') return muffinSVG(a, p.id);
+  if (a.kind === 'cookie') return cookieSVG(p.id);
+  if (a.kind === 'cup') return cupSVG(a);
+  if (a.kind === 'mug') return mugSVG(a);
+  if (a.kind === 'combo'){
+    const drink = a.b === 'mug' ? mugSVG({liquid:'#3B1E12'}) : cupSVG({liquid:'#E5384F'});
+    return `<div class="combo">${photo(byId(a.a), 'round')}<span>${drink}</span></div>`;
+  }
+  return '';
+}
+function boxArt(items){
+  return `<div class="mini-box">${items.slice(0,4).map(id => photo(byId(id), 'round')).join('')}</div>`;
+}
+function logoSVG(){
+  return `<svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="58" fill="#FBF7F3" stroke="#D9A441" stroke-width="4"/>
+  ${donutSVG({glaze:'#F48FB1', top:'sprinkles', tc:['#fff','#5B1426']}, 'logoA').replace('<svg ', '<svg x="10" y="34" width="56" height="56" ')}
+  ${donutSVG({glaze:'#5A2E1E', top:'jimmies', tc:['#F48FB1','#fff']}, 'logoB').replace('<svg ', '<svg x="54" y="34" width="56" height="56" ')}
+  <path d="M22 34 19 18l10 8 9-12 9 12 10-8-3 16Z" fill="#D9A441"/><path d="M64 34 61 18l10 8 9-12 9 12 10-8-3 16Z" fill="#D9A441"/>
+  <text x="60" y="104" text-anchor="middle" font-family="Kaushan Script, cursive" font-size="17" fill="#5B1426">Oh my donut</text></svg>`;
+}
+
+/* =========================================================
+   ÉTAT
+   ========================================================= */
+let cart = store.get('omd_cart', []);
+let currentCat = 'best';
+let boxSize = BOX_SIZES[1];
+let boxItems = [];
+let checkout = { mode:'collect', date:'', time:'', pay:'store', ev:{ type:'Anniversaire', who:'', age:'', guests:'', msg:'' } };
+let lastFocus = null;
+
+/* =========================================================
+   HEURE DE PARIS / CRÉNEAUX
+   ========================================================= */
+function parisNow(){
+  const parts = new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/Paris', hour:'2-digit', minute:'2-digit', hour12:false, weekday:'short'}).formatToParts(new Date());
+  const get = t => parts.find(x => x.type === t).value;
+  const dow = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday'));
+  return { mins: (+get('hour') % 24) * 60 + (+get('minute')), dow };
+}
+function hoursOf(dow){ return SHOP.hours[dow] || [10,22]; }
+function parisTodayISO(){
+  const parts = new Intl.DateTimeFormat('en-CA', {timeZone:'Europe/Paris', year:'numeric', month:'2-digit', day:'2-digit'}).formatToParts(new Date());
+  const g = t => parts.find(x => x.type === t).value;
+  return `${g('year')}-${g('month')}-${g('day')}`;
+}
+function isoAdd(iso, n){ const d = new Date(iso + 'T12:00:00'); d.setDate(d.getDate() + n); return d.toISOString().slice(0,10); }
+function dowOf(iso){ return new Date(iso + 'T12:00:00').getDay(); }
+function dateLabel(iso){
+  const d = new Date(iso + 'T12:00:00');
+  const t = parisTodayISO();
+  if (iso === t) return "aujourd'hui";
+  if (iso === isoAdd(t, 1)) return 'demain';
+  return d.toLocaleDateString('fr-FR', {weekday:'long', day:'numeric', month:'long'});
+}
+function slotsForDate(iso){
+  const today = parisTodayISO();
+  const [o,c] = hoursOf(dowOf(iso));
+  const end = Math.min(c*60 - SHOP.lastPickupBeforeClose, cartLimit());
+  let from = o*60;
+  if (iso === today) from = Math.max(from, Math.ceil((parisNow().mins + SHOP.leadMinutes) / SHOP.slotStep) * SHOP.slotStep);
+  if (iso < today) return [];
+  const out = [];
+  for (let t = from; t <= end; t += SHOP.slotStep){ out.push(String(Math.floor(t/60)).padStart(2,'0') + 'h' + String(t%60).padStart(2,'0')); }
+  return out;
+}
+function isOpen(){ const {mins, dow} = parisNow(); const [o,c] = hoursOf(dow); return mins >= o*60 && mins < c*60; }
+function cartLimit(){ return cart.reduce((m, l) => { const p = byId(l.id); return p && p.until ? Math.min(m, p.until) : m; }, Infinity); }
+function slotsFor(day){
+  const now = parisNow();
+  const dow = day === 'today' ? now.dow : (now.dow + 1) % 7;
+  const [o,c] = hoursOf(dow);
+  const end = Math.min(c*60 - SHOP.lastPickupBeforeClose, cartLimit());
+  let from = o*60;
+  if (day === 'today') from = Math.max(from, Math.ceil((now.mins + SHOP.leadMinutes) / SHOP.slotStep) * SHOP.slotStep);
+  const out = [];
+  for (let t = from; t <= end; t += SHOP.slotStep){ out.push(String(Math.floor(t/60)).padStart(2,'0') + 'h' + String(t%60).padStart(2,'0')); }
+  return out;
+}
+function renderStatus(){
+  const el = $('#status'); const {mins, dow} = parisNow(); const [o,c] = hoursOf(dow); const open = isOpen();
+  el.classList.toggle('open', open);
+  el.querySelector('span').textContent = open ? `Ouvert jusqu’à ${c}h` : mins < o*60 ? `Fermé, ouvre à ${o}h` : `Fermé, ouvre demain à ${hoursOf((dow+1)%7)[0]}h`;
+}
+
+/* =========================================================
+   MENU
+   ========================================================= */
+function renderTabs(){
+  $('#tabs').innerHTML = CATS.map(c => `<button class="tab" role="tab" aria-selected="${c.id===currentCat}" data-cat="${c.id}">${c.label}</button>`).join('');
+}
+function renderGrid(){
+  const c = CATS.find(x => x.id === currentCat);
+  const list = PRODUCTS.filter(c.f || (p => p.cat === currentCat));
+  $('#grid').innerHTML = list.map(p => `
+    <article class="card">
+      ${p.tag === 'new' ? '<span class="badge new">Nouveau</span>' : p.tag === 'sig' ? '<span class="badge sig">Signature</span>' : (p.best && currentCat !== 'best') ? '<span class="badge best">Best-seller</span>' : ''}
+      <div class="card-art${p.img ? ' photo' : ''}">${artFor(p)}</div>
+      <h3>${p.name}</h3>
+      <p>${p.desc}</p>
+      <div class="card-foot">
+        <span class="price">${euro(p.price)}</span>
+        <button class="add" data-add="${p.id}" aria-label="Ajouter ${p.name} au panier">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+      </div>
+    </article>`).join('');
+}
+
+/* =========================================================
+   PANIER
+   ========================================================= */
+function saveCart(){ store.set('omd_cart', cart); renderCartCount(); }
+function cartTotal(){ return cart.reduce((s,l) => s + l.price*l.qty, 0); }
+function cartQty(){ return cart.reduce((s,l) => s + l.qty, 0); }
+function renderCartCount(){
+  const c = $('#cartCount'); c.textContent = cartQty();
+  c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump');
+  $('#mbarTotal').textContent = euro(cartTotal());
+  $('#mbar').classList.toggle('on', cartQty() > 0 && !$('#drawer').classList.contains('on'));
+}
+function addLine(line){
+  const ex = cart.find(l => l.key === line.key);
+  if (ex) ex.qty += line.qty || 1; else cart.push({...line, qty: line.qty || 1});
+  saveCart();
+  toast(`${line.name} ajouté au panier`);
+}
+function addProduct(id){
+  const p = byId(id); if (!p) return;
+  if (p.options) return openOptions(p);
+  addLine({key:p.id, id:p.id, name:p.name, price:p.price, opts:''});
+}
+function lineArt(l){
+  if (l.box) return boxArt(l.box);
+  const p = byId(l.id); return p ? artFor(p) : '';
+}
+function renderDrawer(step='cart'){
+  const body = $('#drBody'), foot = $('#drFoot');
+  if (step === 'cart'){
+    $('#drTitle').textContent = 'Ton panier';
+    if (!cart.length){
+      body.innerHTML = `<div class="empty">${donutSVG({glaze:'#F48FB1', top:'sprinkles', tc:SPRINK}, 'empty')}<strong>Ton panier est vide</strong>Ajoute quelques donuts depuis la carte ou compose ta box.</div>`;
+      foot.innerHTML = `<a class="btn btn-pink full" href="#carte" id="goMenu">Voir la carte</a>`;
+      $('#goMenu').onclick = closeDrawer;
+      return;
+    }
+    body.innerHTML = cart.map((l,i) => `
+      <div class="line">
+        <div class="line-art">${lineArt(l)}</div>
+        <div>
+          <h4>${l.name}</h4>
+          ${l.opts ? `<small>${l.opts}</small>` : ''}
+          <div class="qty">
+            <button data-q="${i}" data-d="-1" aria-label="Retirer un ${l.name}">−</button>
+            <span>${l.qty}</span>
+            <button data-q="${i}" data-d="1" aria-label="Ajouter un ${l.name}">+</button>
+          </div>
+        </div>
+        <div class="line-price">${euro(l.price*l.qty)}</div>
+      </div>`).join('');
+    foot.innerHTML = `<div class="tot"><span>Total</span><strong>${euro(cartTotal())}</strong></div>
+      <button class="btn btn-pink full" id="toCheckout">Choisir mon créneau</button>`;
+    $('#toCheckout').onclick = () => renderDrawer('checkout');
+  }
+  if (step === 'checkout'){
+    const ev = checkout.mode === 'event';
+    $('#drTitle').textContent = ev ? 'Événement' : 'Retrait';
+    const today = parisTodayISO();
+    const minDate = ev ? isoAdd(today, SHOP.eventMinDays) : today;
+    const maxDate = isoAdd(today, SHOP.maxDaysAhead);
+    if (!checkout.date || checkout.date < minDate || checkout.date > maxDate){
+      checkout.date = minDate;
+      if (!ev && !slotsForDate(today).length) checkout.date = isoAdd(today, 1);
+    }
+    const slots = slotsForDate(checkout.date);
+    if (!slots.includes(checkout.time)) checkout.time = slots[Math.min(slots.length - 1, ev ? Math.floor(slots.length/3) : 0)] || '';
+    const limited = cartLimit() < Infinity;
+    const saved = store.get('omd_customer', {name:'', phone:''});
+    const total = cartTotal();
+    const deposit = Math.max(SHOP.sumup.minDeposit, Math.round(total * SHOP.sumup.depositRate * 100) / 100);
+    const su = SHOP.sumup.enabled;
+    if (!su && checkout.pay !== 'store') checkout.pay = 'store';
+    const e = checkout.ev;
+    body.innerHTML = `
+      <button class="back" id="backCart">‹ Retour au panier</button>
+      <div class="seg modes" role="tablist">
+        <button type="button" role="tab" data-mode="collect" aria-pressed="${!ev}">Click &amp; collect</button>
+        <button type="button" role="tab" data-mode="event" aria-pressed="${ev}">Anniversaire &amp; événement</button>
+      </div>
+      <form id="coForm" novalidate>
+        ${ev ? `
+        <ul class="req">
+          <li><strong>Au moins 48h à l'avance</strong>, jusqu'à 30 jours.</li>
+          <li>Mets d'abord dans le panier les donuts souhaités (box ou unité).</li>
+          <li>${su ? `Un <strong>acompte de 30 %</strong> confirme la réservation.` : `La boutique te rappelle pour confirmer la réservation.`}</li>
+          <li>Personnalisation (message, âge, couleurs) : indique-la ci-dessous.</li>
+        </ul>
+        <div class="field">
+          <label for="evType">Type d'événement</label>
+          <select id="evType">${['Anniversaire','Baby shower','Mariage','Entreprise / bureau','Autre'].map(t => `<option ${t===e.type?'selected':''}>${t}</option>`).join('')}</select>
+        </div>
+        <div class="two">
+          <div class="field">
+            <label for="evWho">${e.type === 'Anniversaire' ? 'Prénom de la personne fêtée' : 'Pour qui ?'}</label>
+            <input id="evWho" value="${e.who}" placeholder="${e.type === 'Anniversaire' ? 'Léa' : 'Les mariés, l’équipe…'}">
+          </div>
+          <div class="field">
+            <label for="evAge">${e.type === 'Anniversaire' ? 'Âge fêté' : 'Nombre de personnes'}</label>
+            <input id="evAge" type="number" inputmode="numeric" min="1" max="${e.type === 'Anniversaire' ? 120 : 500}" value="${e.type === 'Anniversaire' ? e.age : e.guests}" placeholder="${e.type === 'Anniversaire' ? '7' : '20'}">
+          </div>
+        </div>
+        ${e.type === 'Anniversaire' ? `<div class="field"><label for="evGuests">Nombre de personnes</label><input id="evGuests" type="number" inputmode="numeric" min="1" max="500" value="${e.guests}" placeholder="12"></div>` : ''}
+        <div class="field">
+          <label for="evMsg">Message ou personnalisation <span style="font-weight:500;color:var(--choco-soft)">(facultatif)</span></label>
+          <input id="evMsg" value="${e.msg}" placeholder="Joyeux anniversaire Léa, couleurs rose et or…">
+        </div>` : ''}
+        <div class="field">
+          <span class="lbl">${ev ? 'Date de l’événement' : 'Jour de retrait'}</span>
+          ${ev ? '' : `<div class="chips">
+            <button type="button" data-date="${today}" aria-pressed="${checkout.date===today}" ${slotsForDate(today).length?'':'disabled style="opacity:.4"'}>Aujourd'hui</button>
+            <button type="button" data-date="${isoAdd(today,1)}" aria-pressed="${checkout.date===isoAdd(today,1)}">Demain</button>
+          </div>`}
+          <input type="date" id="fDate" value="${checkout.date}" min="${minDate}" max="${maxDate}" required>
+          ${limited ? `<div class="notice" style="margin:10px 0 0">L’offre petit déjeuner se retire avant 11h. Les créneaux proposés en tiennent compte.</div>` : ''}
+        </div>
+        <div class="field">
+          <label for="fTime">${ev ? 'Heure de retrait' : 'Heure de retrait'}</label>
+          ${slots.length ? `<select id="fTime">${slots.map(t => `<option ${t===checkout.time?'selected':''}>${t}</option>`).join('')}</select>` : `<div class="notice" style="margin:0">Aucun créneau ce jour-là pour ce panier. Choisis un autre jour${limited ? ' ou retire le petit déjeuner' : ''}.</div>`}
+        </div>
+        <div class="field" id="fName">
+          <label for="iName">Prénom</label>
+          <input id="iName" autocomplete="given-name" value="${saved.name}" required>
+          <div class="err">Indique ton prénom pour qu'on retrouve ta commande.</div>
+        </div>
+        <div class="field" id="fPhone">
+          <label for="iPhone">Téléphone</label>
+          <input id="iPhone" type="tel" autocomplete="tel" inputmode="tel" placeholder="06 12 34 56 78" value="${saved.phone}" required>
+          <div class="err">Entre un numéro français valide, par exemple 06 12 34 56 78.</div>
+        </div>
+        <div class="field">
+          <label for="iNote">Une précision ? <span style="font-weight:500;color:var(--choco-soft)">(facultatif)</span></label>
+          <textarea id="iNote" placeholder="${ev ? 'Allergies, heure de livraison souhaitée, nombre de bougies…' : 'Bougie d’anniversaire, allergie, message…'}"></textarea>
+        </div>
+        <div class="field">
+          <span class="lbl">Paiement</span>
+          <div class="pay">
+            <label><input type="radio" name="pay" value="store" ${checkout.pay==='store'?'checked':''}><span>Au retrait en boutique<small>Carte bancaire ou espèces</small></span></label>
+            <label class="${su?'':'off'}"><input type="radio" name="pay" value="deposit" ${checkout.pay==='deposit'?'checked':''} ${su?'':'disabled'}><span>Acompte en ligne : ${euro(deposit)}${su?'':'<span class="tag">bientôt</span>'}<small>Carte bancaire sécurisée par SumUp, le reste au retrait</small></span></label>
+            <label class="${su?'':'off'}"><input type="radio" name="pay" value="full" ${checkout.pay==='full'?'checked':''} ${su?'':'disabled'}><span>Tout payer en ligne : ${euro(total)}${su?'':'<span class="tag">bientôt</span>'}<small>Carte bancaire sécurisée par SumUp, rien à régler sur place</small></span></label>
+          </div>
+        </div>
+      </form>`;
+    foot.innerHTML = `<div class="tot"><span>${checkout.pay==='deposit' ? 'Acompte à régler maintenant' : checkout.pay==='full' ? 'Total à régler en ligne' : 'Total à régler au retrait'}</span><strong>${euro(checkout.pay==='deposit' ? deposit : total)}</strong></div>
+      <button class="btn btn-pink full" id="placeOrder" ${slots.length ? '' : 'disabled'}>${checkout.pay==='store' ? (ev ? 'Envoyer ma réservation' : 'Valider ma commande') : 'Continuer vers le paiement'}</button>`;
+    $('#backCart').onclick = () => renderDrawer('cart');
+    body.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => { checkout.mode = b.dataset.mode; checkout.date = ''; checkout.time = ''; renderDrawer('checkout'); });
+    body.querySelectorAll('[data-date]').forEach(b => b.onclick = () => { checkout.date = b.dataset.date; checkout.time = ''; renderDrawer('checkout'); });
+    $('#fDate').onchange = ev2 => { if (ev2.target.value){ checkout.date = ev2.target.value; checkout.time = ''; renderDrawer('checkout'); } };
+    if ($('#fTime')) $('#fTime').onchange = ev2 => checkout.time = ev2.target.value;
+    body.querySelectorAll('[name="pay"]').forEach(r => r.onchange = () => { checkout.pay = r.value; renderDrawer('checkout'); });
+    if (ev){
+      const keep = () => { e.who = $('#evWho').value; e.msg = $('#evMsg').value; if (e.type === 'Anniversaire'){ e.age = $('#evAge').value; e.guests = $('#evGuests').value; } else { e.guests = $('#evAge').value; } };
+      ['#evWho','#evAge','#evMsg','#evGuests'].forEach(id => { if ($(id)) $(id).oninput = keep; });
+      $('#evType').onchange = ev2 => { keep(); e.type = ev2.target.value; renderDrawer('checkout'); };
+    }
+    $('#placeOrder').onclick = placeOrder;
+  }
+}
+function validPhone(v){ const d = v.replace(/[\s.\-]/g,''); return /^(?:\+33|0033|0)[1-9]\d{8}$/.test(d); }
+function payLabel(o){
+  if (o.pay === 'deposit') return `Acompte de ${euro(o.deposit)} en ligne, reste ${euro(o.total - o.deposit)} au retrait`;
+  if (o.pay === 'full') return `Totalité (${euro(o.total)}) réglée en ligne`;
+  return 'Au retrait en boutique';
+}
+async function placeOrder(){
+  const name = $('#iName').value.trim(), phone = $('#iPhone').value.trim(), note = $('#iNote').value.trim();
+  $('#fName').classList.toggle('bad', !name);
+  $('#fPhone').classList.toggle('bad', !validPhone(phone));
+  if (!name){ $('#iName').focus(); return; }
+  if (!validPhone(phone)){ $('#iPhone').focus(); return; }
+  store.set('omd_customer', {name, phone});
+  const ev = checkout.mode === 'event';
+  const code = (ev ? 'EVT-' : 'OMD-') + Math.random().toString(36).slice(2,6).toUpperCase();
+  const total = cartTotal();
+  const deposit = Math.max(SHOP.sumup.minDeposit, Math.round(total * SHOP.sumup.depositRate * 100) / 100);
+  const order = {
+    code, name, phone, note, mode: ev ? 'event' : 'collect',
+    date: checkout.date, time: checkout.time, pickup: `${dateLabel(checkout.date)} à ${checkout.time}`,
+    total, pay: checkout.pay, deposit: checkout.pay === 'deposit' ? deposit : checkout.pay === 'full' ? total : 0,
+    payStatus: checkout.pay === 'store' ? 'sur place' : 'en attente',
+    event: ev ? {...checkout.ev} : null,
+    lines: cart.map(l => ({name:l.name, opts:l.opts, qty:l.qty, price:l.price})), createdAt: new Date().toISOString()
+  };
+  const btn = $('#placeOrder'); btn.disabled = true; btn.textContent = 'Envoi en cours…';
+  const r = await notifyShop(order);
+  const sent = r.email || r.whatsapp || r.endpoint;
+  order.sent = sent;
+  store.set('omd_last_order', order);
+  if (order.pay !== 'store' && SHOP.sumup.enabled){
+    btn.textContent = 'Ouverture du paiement…';
+    try{
+      const res = await fetch(SHOP.sumup.createUrl, {method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ code, amount: order.deposit, description: `Oh My Donut ${code}, ${order.pay === 'deposit' ? 'acompte' : 'commande'} ${name}` })});
+      const j = await res.json();
+      if (res.ok && j.url){
+        order.checkoutId = j.id; store.set('omd_last_order', order);
+        cart = []; saveCart();
+        location.href = j.url; return;
+      }
+    }catch(e){}
+    order.pay = 'store'; order.deposit = 0; order.payStatus = 'sur place'; order.payFallback = true;
+    store.set('omd_last_order', order);
+  }
+  renderDone(order, sent);
+  cart = []; saveCart();
+}
+async function notifyShop(order, subjectOverride){
+  const res = {email:false, whatsapp:false, endpoint:false};
+  const items = order.lines.map(l => `${l.qty} x ${l.name}${l.opts ? ' (' + l.opts + ')' : ''} : ${euro(l.qty*l.price)}`).join('\n');
+  const ev = order.event;
+  const evText = ev ? `${ev.type}${ev.who ? ' pour ' + ev.who : ''}${ev.age ? ', ' + ev.age + ' ans' : ''}${ev.guests ? ', ' + ev.guests + ' personnes' : ''}${ev.msg ? '. Message : ' + ev.msg : ''}` : 'Non';
+  const payText = `${payLabel(order)} (${order.payStatus})`;
+  const jobs = [];
+  if (SHOP.email){
+    jobs.push(fetch('https://formsubmit.co/ajax/' + SHOP.email, {
+      method:'POST', headers:{'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify({
+        _subject: subjectOverride || `${ev ? '🎉 Réservation événement' : '🍩 Nouvelle commande'} ${order.code}, ${order.pickup}`,
+        _template: 'table', _captcha: 'false',
+        'Commande': order.code, 'Type': ev ? 'Anniversaire / événement' : 'Click & collect', 'Client': order.name, 'Téléphone': order.phone,
+        'Retrait': order.pickup, 'Événement': evText, 'Articles': items, 'Total': euro(order.total), 'Paiement': payText, 'Note': order.note || 'Aucune'
+      })
+    }).then(r => r.json()).then(j => { res.email = j.success === true || j.success === 'true'; }).catch(() => {}));
+  }
+  if (SHOP.whatsappKey){
+    const url = `https://api.callmebot.com/whatsapp.php?phone=${SHOP.whatsappPhone}&apikey=${SHOP.whatsappKey}&text=${encodeURIComponent((subjectOverride ? subjectOverride + '\n' : (ev ? '🎉 RÉSERVATION ÉVÉNEMENT\n' : '🍩 NOUVELLE COMMANDE\n')) + smsBody(order))}`;
+    jobs.push(fetch(url, {mode:'no-cors'}).then(() => { res.whatsapp = true; }).catch(() => {}));
+  }
+  if (SHOP.orderEndpoint){
+    jobs.push(fetch(SHOP.orderEndpoint, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({...order, subject: subjectOverride || null})})
+      .then(r => { res.endpoint = r.ok; }).catch(() => {}));
+  }
+  await Promise.race([Promise.all(jobs), new Promise(r => setTimeout(r, 9000))]);
+  return res;
+}
+function smsBody(o){
+  const ev = o.event;
+  return `Commande ${o.code}\n${o.name} (${o.phone})\nRetrait ${o.pickup}\n` +
+    (ev ? `${ev.type}${ev.who ? ' pour ' + ev.who : ''}${ev.age ? ', ' + ev.age + ' ans' : ''}${ev.guests ? ', ' + ev.guests + ' pers.' : ''}${ev.msg ? '\nMessage : ' + ev.msg : ''}\n` : '') +
+    '\n' + o.lines.map(l => `${l.qty} x ${l.name}${l.opts ? ' ('+l.opts+')' : ''}`).join('\n') +
+    `\n\nTotal ${euro(o.total)}\nPaiement : ${payLabel(o)}` + (o.note ? `\nNote : ${o.note}` : '');
+}
+function renderDone(o, sent, paid){
+  $('#drTitle').textContent = 'Merci !';
+  const ev = o.mode === 'event';
+  const sms = `sms:${SHOP.smsTo}?&body=${encodeURIComponent(smsBody(o))}`;
+  const payLine = paid === true ? `<div class="notice" style="background:#E8F7EE;border-color:#9ED9B5"><strong>Paiement reçu.</strong> ${payLabel(o)}.</div>`
+    : paid === false ? `<div class="notice"><strong>Paiement en ligne non confirmé.</strong> La boutique vérifie de son côté ; sinon le règlement se fera au retrait.</div>`
+    : o.payFallback ? `<div class="notice">Le paiement en ligne n'a pas pu démarrer. Ta commande est bien enregistrée, règlement au retrait.</div>` : '';
+  $('#drBody').innerHTML = `<div class="done">
+    <img class="big" src="cut-fraise.webp" alt="" width="150" height="150" style="display:block;margin:0 auto 6px">
+    <h3>${sent ? (ev ? 'Réservation envoyée' : 'Commande envoyée') : 'Presque fini'}, ${o.name} !</h3>
+    <div class="code">${o.code}</div>
+    <p>${sent ? 'La boutique a bien reçu ' + (ev ? 'ta réservation. ' : 'ta commande. ') : ''}${ev ? `${o.event.type} ${o.pickup}. La boutique te rappelle au ${o.phone} pour confirmer les détails.` : `Retrait ${o.pickup} au 19 rue des Capucins. Donne ce numéro au comptoir.`}</p>
+    ${payLine}
+    ${sent ? '' : `<div class="notice"><strong>Dernière étape :</strong> envoie le SMS pré-rempli à la boutique pour confirmer. Tout est déjà écrit, tu n'as qu'à appuyer sur envoyer.</div>`}
+    <div class="recap">${o.lines.map(l => `<div><span>${l.qty} × ${l.name}${l.opts ? `<br><span class="muted" style="font-size:.85rem">${l.opts}</span>` : ''}</span><span>${euro(l.qty*l.price)}</span></div>`).join('')}
+      <div style="border-top:1px solid var(--line);margin-top:6px;padding-top:8px;font-weight:800"><span>Total</span><span>${euro(o.total)}</span></div>
+      <div class="muted"><span>Paiement</span><span style="text-align:right">${payLabel(o)}</span></div></div>
+  </div>`;
+  $('#drFoot').innerHTML = sent
+    ? `<button class="btn btn-choco full" id="doneClose">Retour au site</button>`
+    : `<a class="btn btn-pink full" href="${sms}" id="smsBtn">Envoyer ma commande par SMS</a>
+       <button class="link-btn full" style="margin-top:12px;display:block" id="doneClose">Fermer</button>`;
+  $('#doneClose').onclick = () => { closeDrawer(); };
+}
+async function handlePaymentReturn(){
+  const q = new URLSearchParams(location.search);
+  if (q.get('paiement') !== 'retour') return;
+  const o = store.get('omd_last_order', null);
+  history.replaceState(null, '', location.pathname);
+  if (!o || o.code !== q.get('ref')) return;
+  let paid = false;
+  try{
+    const r = await fetch(SHOP.sumup.statusUrl + '?id=' + encodeURIComponent(o.checkoutId || ''));
+    const j = await r.json();
+    paid = r.ok && j.status === 'PAID';
+  }catch(e){}
+  if (paid && o.payStatus !== 'payé'){
+    o.payStatus = 'payé'; store.set('omd_last_order', o);
+    notifyShop(o, `✅ Paiement reçu ${o.code} : ${payLabel(o)}`);
+  }
+  lastFocus = document.activeElement;
+  renderDone(o, o.sent, paid);
+  $('#drawer').classList.add('on'); $('#scrim').classList.add('on');
+  $('#drawer').setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  const intro = document.getElementById('intro'); if (intro) intro.remove();
+}
+function openDrawer(step){
+  lastFocus = document.activeElement;
+  if (step === 'event'){
+    checkout.mode = 'event'; checkout.date = ''; checkout.time = '';
+    if (cart.length) renderDrawer('checkout');
+    else {
+      renderDrawer('cart');
+      $('#drBody').innerHTML = `<div class="empty">${donutSVG({glaze:'#F48FB1', top:'sprinkles', tc:SPRINK}, 'empty')}<strong>Ton panier est vide</strong>Ajoute d'abord les donuts de ton événement (box ou à l'unité), puis valide en choisissant « Anniversaire &amp; événement ».</div>`;
+    }
+  } else renderDrawer('cart');
+  $('#drawer').classList.add('on'); $('#scrim').classList.add('on');
+  $('#drawer').setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  $('#mbar').classList.remove('on');
+  $('#toast').classList.remove('on');
+  setTimeout(() => $('#closeCart').focus(), 50);
+}
+function closeDrawer(){
+  $('#drawer').classList.remove('on'); $('#scrim').classList.remove('on');
+  $('#drawer').setAttribute('aria-hidden','true');
+  document.body.style.overflow = '';
+  renderCartCount();
+  if (lastFocus) lastFocus.focus();
+}
+
+/* =========================================================
+   OPTIONS (boissons, formules)
+   ========================================================= */
+function openOptions(p){
+  lastFocus = document.activeElement;
+  const groups = p.options.map(g => ({label:g.label, choices: g.choices === 'DONUTS' ? PRODUCTS.filter(x => x.cat==='donuts' && x.tier!=='premium').map(x=>x.name) : g.choices}));
+  const sel = groups.map(g => g.choices[0]);
+  const card = $('#modalCard');
+  const draw = () => {
+    card.innerHTML = `
+      <button class="x" id="mClose" aria-label="Fermer"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="m-art">${artFor(p)}</div>
+      <h3 id="mTitle">${p.name}</h3>
+      <p>${p.desc}</p>
+      ${groups.map((g,gi) => `<div class="opt-group"><span class="lbl">${g.label}</span><div class="opts">${g.choices.map(c => `<button class="opt" data-g="${gi}" data-c="${c}" aria-pressed="${sel[gi]===c}">${c}</button>`).join('')}</div></div>`).join('')}
+      <button class="btn btn-pink full" id="mAdd">Ajouter, ${euro(p.price)}</button>`;
+    card.querySelectorAll('.opt').forEach(b => b.onclick = () => { sel[+b.dataset.g] = b.dataset.c; draw(); card.querySelector(`.opt[data-g="${b.dataset.g}"][aria-pressed="true"]`).focus(); });
+    $('#mClose').onclick = closeModal;
+    $('#mAdd').onclick = () => {
+      const opts = sel.join(', ');
+      addLine({key:p.id+'|'+opts, id:p.id, name:p.name, price:p.price, opts});
+      closeModal();
+    };
+  };
+  draw();
+  $('#modal').classList.add('on');
+  setTimeout(() => $('#mAdd').focus(), 50);
+}
+function closeModal(){ $('#modal').classList.remove('on'); if (lastFocus) lastFocus.focus(); }
+
+/* =========================================================
+   BOX BUILDER
+   ========================================================= */
+const BOX_DONUTS = () => PRODUCTS.filter(p => p.cat === 'donuts');
+function renderSizes(){
+  $('#sizes').innerHTML = BOX_SIZES.map(b => `<button class="size" data-size="${b.n}" aria-pressed="${b.n===boxSize.n}"><strong>Box de ${b.n}</strong><span>${euro(b.price)}</span></button>`).join('');
+}
+function renderPalette(){
+  $('#palette').innerHTML = BOX_DONUTS().map(p => `<button class="pal" data-pick="${p.id}" aria-label="Ajouter ${p.name} à la box">${photo(p, 'round')}<span>${p.name}</span></button>`).join('');
+}
+function renderBox(popIndex){
+  const s = $('#slots');
+  s.style.gridTemplateColumns = `repeat(${boxSize.cols},1fr)`;
+  let html = '';
+  for (let i=0;i<boxSize.n;i++){
+    const id = boxItems[i];
+    html += id ? `<button class="slot filled ${i===popIndex?'pop':''}" data-slot="${i}" aria-label="Retirer ${byId(id).name}">${photo(byId(id), 'round')}</button>`
+               : `<div class="slot" aria-hidden="true"></div>`;
+  }
+  s.innerHTML = html;
+  $('#boxTitle').textContent = `Box de ${boxSize.n}`;
+  $('#boxCount').textContent = `${boxItems.filter(Boolean).length} / ${boxSize.n}`;
+  $('#boxPrice').textContent = euro(boxSize.price);
+  const full = boxItems.filter(Boolean).length === boxSize.n;
+  $('#boxAdd').disabled = !full;
+  $('#boxAdd').textContent = full ? 'Ajouter la box' : `Encore ${boxSize.n - boxItems.filter(Boolean).length} donut${boxSize.n - boxItems.filter(Boolean).length>1?'s':''}`;
+}
+function pickDonut(id){
+  const idx = Array.from({length:boxSize.n}, (_,i)=>i).find(i => !boxItems[i]);
+  if (idx === undefined){ toast('Ta box est pleine, ajoute-la au panier'); return; }
+  boxItems[idx] = id; renderBox(idx);
+}
+function addBox(){
+  const items = boxItems.filter(Boolean);
+  const counts = {}; items.forEach(id => counts[id] = (counts[id]||0)+1);
+  const opts = Object.entries(counts).map(([id,n]) => `${n} ${byId(id).name}`).join(', ');
+  cart.push({key:'box-'+Date.now(), id:'box', box:items, name:`Box de ${boxSize.n} donuts`, price:boxSize.price, opts, qty:1});
+  saveCart(); toast(`Box de ${boxSize.n} ajoutée au panier`);
+  boxItems = []; renderBox();
+}
+
+/* =========================================================
+   TOAST
+   ========================================================= */
+let toastT;
+function toast(msg){
+  const t = $('#toast');
+  t.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#FAD6E3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg><span>${msg}</span>`;
+  t.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('on'), 2200);
+}
+
+/* =========================================================
+   INIT
+   ========================================================= */
+function init(){
+  $('#bdayArt').innerHTML = ['oreo','bueno-white','smarties'].map(id => photo(byId(id), 'round')).join('');
+  $('#reviewsLink').href = SHOP.reviews;
+  const maps = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('Oh my donut ' + SHOP.address);
+  $('#addrLink').href = maps;
+  $('#mapFrame').src = 'https://maps.google.com/maps?q=' + encodeURIComponent('Oh my donut, ' + SHOP.address) + '&z=16&output=embed';
+  ['#telLink','#footTel'].forEach(s => { $(s).href = 'tel:' + SHOP.phone; $(s).textContent = SHOP.phoneDisplay; });
+  $('#bdayCall').href = 'tel:' + SHOP.phone;
+  $('#bdayOrder').onclick = () => openDrawer('event');
+  const addrQ = encodeURIComponent(SHOP.address);
+  $('#navWaze').href = `https://waze.com/ul?q=${addrQ}&navigate=yes`;
+  $('#navGmaps').href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent('Oh My Donut, ' + SHOP.address)}`;
+  $('#navPlans').href = `https://maps.apple.com/?daddr=${addrQ}&dirflg=d`;
+  ['#igLink','#footIg'].forEach(s => $(s).href = SHOP.instagram);
+  $('#year').textContent = new Date().getFullYear();
+  const v = $('#heroVideo');
+  if (v){ try{ if (matchMedia('(prefers-reduced-motion: reduce)').matches){ v.removeAttribute('autoplay'); v.pause(); } else { v.play().catch(() => {}); } }catch(e){} }
+
+  renderStatus(); setInterval(renderStatus, 60000);
+  renderTabs(); renderGrid();
+  renderSizes(); renderPalette(); renderBox();
+  renderCartCount(); $('#cartCount').classList.remove('bump');
+
+  document.addEventListener('click', e => {
+    const add = e.target.closest('[data-add]'); if (add){ addProduct(add.dataset.add); return; }
+    const tab = e.target.closest('[data-cat]'); if (tab){ currentCat = tab.dataset.cat; renderTabs(); renderGrid(); return; }
+    const size = e.target.closest('[data-size]'); if (size){ boxSize = BOX_SIZES.find(b => b.n === +size.dataset.size); boxItems = boxItems.slice(0, boxSize.n); renderSizes(); renderBox(); return; }
+    const pick = e.target.closest('[data-pick]'); if (pick){ pickDonut(pick.dataset.pick); return; }
+    const slot = e.target.closest('[data-slot]'); if (slot){ boxItems[+slot.dataset.slot] = undefined; renderBox(); return; }
+    const q = e.target.closest('[data-q]');
+    if (q){ const l = cart[+q.dataset.q]; l.qty += +q.dataset.d; if (l.qty <= 0) cart.splice(+q.dataset.q, 1); saveCart(); renderDrawer('cart'); return; }
+  });
+  $('#tabs').addEventListener('keydown', e => {
+    if (!['ArrowLeft','ArrowRight'].includes(e.key)) return;
+    const i = CATS.findIndex(c => c.id === currentCat);
+    currentCat = CATS[(i + (e.key==='ArrowRight'?1:-1) + CATS.length) % CATS.length].id;
+    renderTabs(); renderGrid(); $(`[data-cat="${currentCat}"]`).focus();
+  });
+  $('#boxRandom').onclick = () => { const pool = BOX_DONUTS(); for (let i=0;i<boxSize.n;i++) if (!boxItems[i]) boxItems[i] = pool[Math.floor(Math.random()*pool.length)].id; renderBox(); };
+  $('#boxAdd').onclick = addBox;
+  $('#openCart').onclick = () => openDrawer();
+  $('#mbarBtn').onclick = () => openDrawer();
+  $('#closeCart').onclick = closeDrawer;
+  $('#scrim').onclick = closeDrawer;
+  $('#modalScrim').onclick = closeModal;
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if ($('#modal').classList.contains('on')) closeModal();
+    else if ($('#drawer').classList.contains('on')) closeDrawer();
+  });
+}
+/* =========================================================
+   ANIMATION D'ACCUEIL (jouée à chaque chargement de la page)
+   ========================================================= */
+function runIntro(){
+  const el = document.getElementById('intro'); if (!el) return;
+  const stage = $('#introStage'), logo = $('#introLogo'), tag = $('#introTag');
+  const W = innerWidth, H = innerHeight;
+  const ids = ['fraise','oreo','bueno-white','pistache','smarties','kinder-country','tagada','citron-meringue','mms','bueno-lait','marshmallow-fraise','framboise-chocolat-blanc'];
+  const n = W < 600 ? 10 : ids.length;
+  const size = Math.max(74, Math.min(160, Math.min(W, H) * 0.17));
+  const rx = Math.max(W * 0.38, 150), ry = Math.max(H * 0.34, 150);
+  const dons = [];
+  for (let i = 0; i < n; i++){
+    const narrow = W < 900;
+    const half = Math.ceil(n/2), k = i % half, top = i < half;
+    const a = narrow
+      ? (top ? -Math.PI*0.85 : Math.PI*0.15) + (k + 0.5) * (Math.PI*0.7 / half)
+      : -Math.PI/2 + i * (Math.PI*2/n) + 0.3;
+    const s = size * (0.8 + Math.random() * 0.4);
+    const x = W/2 + Math.cos(a) * rx * (0.92 + Math.random()*0.16) - s/2;
+    const y = H/2 + Math.sin(a) * ry * (0.92 + Math.random()*0.16) - s/2;
+    const d = document.createElement('div');
+    d.className = 'i-don'; d.style.width = d.style.height = s + 'px';
+    d.style.transform = `translate(${x}px, ${-s - 40}px)`;
+    d.innerHTML = `<img src="cut-${ids[i]}.webp" alt="" width="340" height="340">`;
+    stage.appendChild(d);
+    dons.push({d, x, y, s, r: (Math.random()*60 - 30)});
+  }
+  const cols = ['#FFFFFF','#F7C948','#4FC3F7','#EC4C8A','#7BD389','#B388EB','#FAD6E3'];
+  for (let i = 0; i < 30; i++){
+    const sp = document.createElement('i');
+    sp.className = 'i-spr';
+    sp.style.setProperty('--c', cols[i % cols.length]);
+    sp.style.setProperty('--r', (i * 12 + Math.random()*8) + 'deg');
+    sp.style.setProperty('--d', (Math.min(W, 700) * 0.25 + Math.random()*Math.min(W, 700) * 0.25) + 'px');
+    stage.appendChild(sp);
+  }
+  document.body.style.overflow = 'hidden';
+  let finished = false; const timers = [];
+  const done = () => {
+    if (finished) return; finished = true;
+    timers.forEach(clearTimeout);
+    el.classList.add('out');
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    setTimeout(() => el.remove(), 1000);
+  };
+  const onKey = e => { if (['Escape','Enter',' '].includes(e.key)) done(); };
+  el.addEventListener('click', done);
+  document.addEventListener('keydown', onKey);
+  const start = () => {
+    if (finished) return;
+    // 1. Les donuts tombent du haut et rebondissent
+    dons.forEach((o, i) => {
+      o.d.animate([
+        {transform:`translate(${o.x}px, ${-o.s - 60}px) rotate(${o.r - 220}deg)`, easing:'cubic-bezier(.55,0,1,.45)'},
+        {transform:`translate(${o.x}px, ${o.y}px) rotate(${o.r}deg)`, offset:.62, easing:'cubic-bezier(0,.55,.45,1)'},
+        {transform:`translate(${o.x}px, ${o.y - o.s*0.22}px) rotate(${o.r + 6}deg)`, offset:.82, easing:'cubic-bezier(.55,0,1,.45)'},
+        {transform:`translate(${o.x}px, ${o.y}px) rotate(${o.r}deg)`}
+      ], {duration: 950, delay: i * 75, fill:'both'});
+    });
+    // 2. Le logo arrive avec un rebond + pluie de vermicelles
+    timers.push(setTimeout(() => {
+      logo.animate([
+        {opacity:0, transform:'scale(.3) rotate(-10deg)'},
+        {opacity:1, transform:'scale(1.08) rotate(2deg)', offset:.7},
+        {opacity:1, transform:'scale(1) rotate(0)'}
+      ], {duration: 650, easing:'cubic-bezier(.3,1.4,.5,1)', fill:'forwards'});
+      el.classList.add('burst');
+    }, 850));
+    timers.push(setTimeout(() => tag.animate([{opacity:0, transform:'translateY(10px)'},{opacity:1, transform:'none'}], {duration: 450, fill:'forwards'}), 1350));
+    // 3. Les donuts s'envolent puis le rideau remonte
+    timers.push(setTimeout(() => {
+      dons.forEach(o => {
+        const cx = o.x + o.s/2 - W/2, cy = o.y + o.s/2 - H/2;
+        o.d.animate([
+          {transform:`translate(${o.x}px, ${o.y}px) rotate(${o.r}deg) scale(1)`, opacity:1},
+          {transform:`translate(${o.x + cx*0.9}px, ${o.y + cy*0.9}px) rotate(${o.r + 160}deg) scale(.5)`, opacity:0}
+        ], {duration: 520, easing:'cubic-bezier(.5,0,.75,0)', fill:'forwards'});
+      });
+    }, 2450));
+    timers.push(setTimeout(done, 2850));
+  };
+  const imgs = [logo, ...stage.querySelectorAll('.i-don img')];
+  Promise.race([
+    Promise.all(imgs.map(i => i.decode ? i.decode().catch(() => {}) : Promise.resolve())),
+    new Promise(r => setTimeout(r, 900))
+  ]).then(start);
+  timers.push(setTimeout(done, 6000));
+}
+
+init();
+if (/[?&]paiement=retour/.test(location.search)) handlePaymentReturn(); else runIntro();
+</script>
+</body>
+</html>

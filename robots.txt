@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ohmydonut-reims.vercel.app/sitemap.xml
